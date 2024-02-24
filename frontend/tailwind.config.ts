@@ -8,10 +8,18 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+      colors: {
+        primaryGreen : "#8bcda6",
+        greyText : "#A7A6A6",
+        darkText : "#232229"
+      },
+      fontSize: {
+        xxs: "0.5rem",
+        xxss: "0.3rem",
+      },
+      screens: {
+        '2xl': '1350px', // Define the 2xl breakpoint for width greater than 1350px
+        '4xl': '1500px', // Define the 2xl breakpoint for width greater than 1350px
       },
     },
   },
