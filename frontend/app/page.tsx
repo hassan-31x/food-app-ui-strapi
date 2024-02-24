@@ -1,12 +1,16 @@
 import Image from "next/image";
+import Header from "./(ui-components)/Header";
 
 export default function Home() {
+  const backgroundImageUrl =
+    "/LandingPageImages/Backgrounds/BackgroundLayer.svg";
+    
   return (
     <main
       className="bg-cover bg-center w-full h-[120rem] md:h-[250rem] lg:h-[300rem] xl:h-[330rem] 2xl:h-[350rem] 4xl:h-[400rem] bg-no-repeat mt-0 "
       // style={{ backgroundImage: `url(${backgroundImageUrl})` }}
     >
-      {/* <Header /> */}
+      <Header />
       {/* <Hero heroHeading={landingPage.heroHeading} heroText={landingPage.heroText} heroVideo={landingPage.heroVideo} /> */}
       <div className=" justify-end h-max flex w-[83%] mx-auto mt-6 gap-x-3 items-center">
         <h3 className="font-bold md:text-xxs text-xxss">GOOGLE & FACEBOOK</h3>
