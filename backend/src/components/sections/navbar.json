@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_sections_navbars",
+  "info": {
+    "displayName": "navbar"
+  },
+  "options": {},
+  "attributes": {
+    "logo": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

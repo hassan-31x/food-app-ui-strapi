@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_elements_buttons",
+  "info": {
+    "displayName": "Button",
+    "icon": ""
+  },
+  "options": {},
+  "attributes": {
+    "text": {
+      "type": "string"
+    },
+    "variant": {
+      "type": "enumeration",
+      "enum": [
+        "FILLED",
+        "TRANSPARENT"
+      ]
+    },
+    "hasGlow": {
+      "type": "boolean",
+      "default": false
+    },
+    "color": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "collectionName": "components_sections_heroes",
+  "info": {
+    "displayName": "hero"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "videoUrl": {
+      "type": "string"
+    },
+    "overlayImage": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "leftButton": {
+      "type": "component",
+      "repeatable": false,
+      "component": "elements.button"
+    },
+    "rightButton": {
+      "type": "component",
+      "repeatable": true,
+      "component": "elements.button"
+    }
+  }
+}
