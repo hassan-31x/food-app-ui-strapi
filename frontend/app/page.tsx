@@ -1,7 +1,25 @@
 import Image from "next/image";
 import Header from "./(ui-components)/Header";
 
-export default function Home() {
+const fetchData = async () => {
+  try {
+    const URL = `${process.env.NEXT_PUBLIC_API_URL}/api/home-pages?populate[0]=metadata.metaImage`
+    const res = await fetch(URL);
+    const { data } = await res.json();
+    return data?.[0];
+  } catch (err) {
+    console.error(err);
+    return {}
+  }
+}
+
+export default async function Home() {
+  const data = await fetchData()
+
+  const URL = process.env.NEXT_PUBLIC_API_URL
+
+  const logoImgUrl = `${URL}${data?.attributes?.metadata?.metaImage?.data?.attributes?.url}` || '/LandingPageImages/Navbar/MainLogo.svg'
+
   const backgroundImageUrl =
     "/LandingPageImages/Backgrounds/BackgroundLayer.svg";
     
@@ -10,7 +28,7 @@ export default function Home() {
       className="bg-cover bg-center w-full h-[120rem] md:h-[250rem] lg:h-[300rem] xl:h-[330rem] 2xl:h-[350rem] 4xl:h-[400rem] bg-no-repeat mt-0 "
       // style={{ backgroundImage: `url(${backgroundImageUrl})` }}
     >
-      <Header />
+      <Header logoUrl={logoImgUrl} />
       {/* <Hero heroHeading={landingPage.heroHeading} heroText={landingPage.heroText} heroVideo={landingPage.heroVideo} /> */}
       <div className=" justify-end h-max flex w-[83%] mx-auto mt-6 gap-x-3 items-center">
         <h3 className="font-bold md:text-xxs text-xxss">GOOGLE & FACEBOOK</h3>

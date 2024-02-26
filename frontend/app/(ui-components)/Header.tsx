@@ -1,14 +1,24 @@
 import HeaderSocials from "./HeaderSocials";
-import HeaderLogo from "./HeaderLogo";
 import HeaderMenu from "./HeaderMenu";
-type Props = {};
+import Image from "next/image";
 
-function Header({}: Props) {
+type Props = {
+  logoUrl: string
+};
+
+function Header({ logoUrl }: Props) {
   return (
     <nav className="flex flex-row justify-between w-[83%] mx-auto mt-5 h-[2.66%] ">
-     <HeaderSocials/>
-     <HeaderLogo/>
-     <HeaderMenu/>
+     <HeaderSocials />
+     <div className="w-[40%] h-full relative">
+      <Image
+        src={logoUrl}
+        fill
+        className="object-contain"
+        alt="Main Logo"
+      />
+    </div>
+     <HeaderMenu />
     </nav>
   );
 }
