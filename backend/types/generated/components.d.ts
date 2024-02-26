@@ -33,9 +33,10 @@ export interface SectionsNavbar extends Schema.Component {
   collectionName: 'components_sections_navbars';
   info: {
     displayName: 'navbar';
+    description: '';
   };
   attributes: {
-    logo: Attribute.Media;
+    image: Attribute.Media;
   };
 }
 

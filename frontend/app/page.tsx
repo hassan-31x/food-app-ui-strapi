@@ -3,7 +3,7 @@ import Header from "./(ui-components)/Header";
 
 const fetchData = async () => {
   try {
-    const URL = `${process.env.NEXT_PUBLIC_API_URL}/api/home-pages?populate[0]=metadata.metaImage`
+    const URL = `${process.env.NEXT_PUBLIC_API_URL}/api/home-pages?populate[metadata][populate][metaImage][populate]=true&populate[metadata][populate][metaImage][fields][0]=name&populate[metadata][populate][metaImage][fields][1]=url&populate[sections][populate][image][fields][0]=name&populate[sections][populate][image][fields][1]=url`
     const res = await fetch(URL);
     const { data } = await res.json();
     return data?.[0];
@@ -18,7 +18,8 @@ export default async function Home() {
 
   const URL = process.env.NEXT_PUBLIC_API_URL
 
-  const logoImgUrl = `${URL}${data?.attributes?.metadata?.metaImage?.data?.attributes?.url}` || '/LandingPageImages/Navbar/MainLogo.svg'
+  const metaImgUrl = `${URL}${data?.attributes?.metadata?.metaImage?.data?.attributes?.url}`
+  const logoImgUrl = `${URL}${data?.attributes?.sections?.[0]?.image?.data?.attributes?.url}` || '/LandingPageImages/Navbar/MainLogo.svg'
 
   const backgroundImageUrl =
     "/LandingPageImages/Backgrounds/BackgroundLayer.svg";
