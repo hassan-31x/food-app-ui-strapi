@@ -1,54 +1,100 @@
 import Image from "next/image";
 import Header from "./(ui-components)/Header";
+import Print from "./print";
+import FormSection from "./(landing-page-components)/FormSection";
+import Philosophy from "./(landing-page-components)/Philosophy";
+import Company from "./(landing-page-components)/Company";
+import Footer from "./(landing-page-components)/Footer";
+import Hero from "./(landing-page-components)/Hero";
+import Review from "./(landing-page-components)/Review";
 
 const fetchData = async () => {
   try {
-    const URL = `${process.env.NEXT_PUBLIC_API_URL}/api/home-pages?populate[metadata][populate][metaImage][populate]=true&populate[metadata][populate][metaImage][fields][0]=name&populate[metadata][populate][metaImage][fields][1]=url&populate[sections][populate][image][fields][0]=name&populate[sections][populate][image][fields][1]=url`
+    const URL = `${process.env.NEXT_PUBLIC_API_URL}/api/home-pages?populate[metadata][populate][metaImage][populate]=true&populate[metadata][populate][metaImage][fields][0]=name&populate[metadata][populate][metaImage][fields][1]=url&populate[sections][populate][image][fields][0]=name&populate[sections][populate][image][fields][1]=url`;
     const res = await fetch(URL);
     const { data } = await res.json();
     return data?.[0];
   } catch (err) {
     console.error(err);
-    return {}
+    return {};
   }
-}
+};
+
+const SECTIONS = [
+  "hero",
+  "menu",
+  "form",
+  "about",
+  "philosophy",
+  "testimonials",
+  "companies",
+  "footer",
+];
 
 export default async function Home() {
-  const data = await fetchData()
+  const data = await fetchData();
 
-  const URL = process.env.NEXT_PUBLIC_API_URL
+  const URL = process.env.NEXT_PUBLIC_API_URL;
 
-  const metaImgUrl = `${URL}${data?.attributes?.metadata?.metaImage?.data?.attributes?.url}`
-  const logoImgUrl = `${URL}${data?.attributes?.sections?.[0]?.image?.data?.attributes?.url}` || '/LandingPageImages/Navbar/MainLogo.svg'
+  const metaImgUrl = `${URL}${data?.attributes?.metadata?.metaImage?.data?.attributes?.url}`;
+  const logoImgUrl =
+    `${URL}${data?.attributes?.sections?.[0]?.image?.data?.attributes?.url}` ||
+    "/LandingPageImages/Navbar/MainLogo.svg";
 
-  const backgroundImageUrl =
-    "/LandingPageImages/Backgrounds/BackgroundLayer.svg";
-    
+  const getSection = (section: string) => {
+    switch (section) {
+      case "hero":
+
+        return ( 
+        <>
+        <Header logoUrl={logoImgUrl} />;
+        {/* <Hero heroHeading={'landingPage.heroHeading'} heroText={'landingPage.heroText'} heroVideo={'landingPage.heroVideo'} /> */}
+        </> )
+      case "menu":
+        // return <Menu menuItems={landingPage.menuItems} />
+        return <></>;
+      case "form":
+        return <FormSection />;
+      case "about":
+        return <></>;
+      // return <VideoSection videoUrl={landingPage.videoUrl} />
+      case "philosophy":
+        return <Philosophy />;
+      case "testimonials":
+        // return <Testimonials testimonials={landingPage.testimonials} />
+        return <></>;
+      case "companies":
+        return <Company />;
+      case "footer":
+        return <Footer />;
+      default:
+        return null;
+    }
+  };
+
   return (
-    <main
-      className="bg-cover bg-center w-full h-[120rem] md:h-[250rem] lg:h-[300rem] xl:h-[330rem] 2xl:h-[350rem] 4xl:h-[400rem] bg-no-repeat mt-0 "
-      // style={{ backgroundImage: `url(${backgroundImageUrl})` }}
-    >
-      <Header logoUrl={logoImgUrl} />
-      {/* <Hero heroHeading={landingPage.heroHeading} heroText={landingPage.heroText} heroVideo={landingPage.heroVideo} /> */}
-      <div className=" justify-end h-max flex w-[83%] mx-auto mt-6 gap-x-3 items-center">
-        <h3 className="font-bold md:text-xxs text-xxss">GOOGLE & FACEBOOK</h3>
-        <div className="md:h-[20px] md:w-[80px] h-[10px] w-[40px] relative">
-          <Image
-            fill
-            className="object-contain"
-            src="/LandingPageImages/Hero/Stars.svg"
-            alt="Starts"
-          />
-        </div>
-        <h3 className="font-bold md:text-xxs text-xxss">200+ REVIEWS</h3>
-      </div>
+    <main className="bg-[#FCFCFD] w-full h-[120rem] md:h-[250rem] lg:h-[300rem] xl:h-[330rem] 2xl:h-[350rem] 4xl:h-[400rem] mt-0">
+      {SECTIONS.map((section, index) => {
+        return <div key={index}>{getSection(section)}</div>;
+      })}
+
+      {/* <Header logoUrl={logoImgUrl} />
+
+      <Hero heroHeading={'landingPage.heroHeading'} heroText={'landingPage.heroText'} heroVideo={'landingPage.heroVideo'} />
+
+      <Review /> */}
+
       {/* <Menu menuItems={landingPage.menuItems} /> */}
+
       {/* <FormSection /> */}
+
       {/* <VideoSection videoUrl={landingPage.videoUrl} /> */}
+
       {/* <Philosophy /> */}
+
       {/* <Testimonials testimonials={landingPage.testimonials}/> */}
-      <div className="h-[2%] w-[25%] mx-auto relative mt-[1%]">
+
+      {/* <div className="h-[2%] w-[25%] mx-auto relative mt-[1%]">
         <Image
           className="object-contain "
           fill
@@ -56,8 +102,12 @@ export default async function Home() {
           alt="Underline"
         />
       </div>
-      {/* <Company /> */}
-      {/* <Footer/> */}
+
+      <Company />
+
+      <Footer /> */}
+
+      <Print data={data.attributes} />
     </main>
   );
 }

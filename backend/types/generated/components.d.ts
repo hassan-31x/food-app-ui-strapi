@@ -18,14 +18,15 @@ export interface SectionsHero extends Schema.Component {
   collectionName: 'components_sections_heroes';
   info: {
     displayName: 'hero';
+    description: '';
   };
   attributes: {
     title: Attribute.String;
     description: Attribute.Text;
-    videoUrl: Attribute.String;
     overlayImage: Attribute.Media;
     leftButton: Attribute.Component<'elements.button'>;
     rightButton: Attribute.Component<'elements.button', true>;
+    video: Attribute.Media;
   };
 }
 
