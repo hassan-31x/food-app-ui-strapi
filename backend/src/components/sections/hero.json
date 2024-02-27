@@ -6,20 +6,6 @@
   },
   "options": {},
   "attributes": {
-    "title": {
-      "type": "string"
-    },
-    "description": {
-      "type": "text"
-    },
-    "overlayImage": {
-      "type": "media",
-      "multiple": false,
-      "required": false,
-      "allowedTypes": [
-        "images"
-      ]
-    },
     "leftButton": {
       "type": "component",
       "repeatable": false,
@@ -27,15 +13,38 @@
     },
     "rightButton": {
       "type": "component",
-      "repeatable": true,
+      "repeatable": false,
       "component": "elements.button"
     },
     "video": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "videos"
-      ],
+      ]
+    },
+    "navbar": {
+      "type": "component",
+      "repeatable": false,
+      "component": "sections.navbar"
+    },
+    "backgroundImage": {
       "type": "media",
-      "multiple": false
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "videoOverlayColor": {
+      "type": "string"
+    },
+    "title": {
+      "type": "richtext"
+    },
+    "description": {
+      "type": "richtext"
     }
   }
 }

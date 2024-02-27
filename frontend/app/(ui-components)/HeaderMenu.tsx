@@ -4,7 +4,7 @@ type Props = {}
 
 function HeaderMenu({}: Props) {
   return (
-    <div className="flex flex-col items-center  justify-center w-[15%] lg:w-[10%] h-full">
+    <div className="flex flex-col items-center justify-center w-[15%] lg:w-[10%] h-full">
     <div className="flex flex-row w-full h-[30%]  justify-between items-center">
       <div className="w-[35%] h-full relative items-center flex">
         <Image

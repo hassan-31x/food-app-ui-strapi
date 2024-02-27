@@ -1,6 +1,7 @@
 "use client"
+
 const Print = ({ data }: any) => {
-  console.log("🚀 ~ Print ~ data:", data)
+  // console.log("🚀 ~ Print ~ data:", data)
   return (
     <></>
   )

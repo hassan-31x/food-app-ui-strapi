@@ -7,11 +7,13 @@ import Company from "./(landing-page-components)/Company";
 import Footer from "./(landing-page-components)/Footer";
 import Hero from "./(landing-page-components)/Hero";
 import Review from "./(landing-page-components)/Review";
+import { combinedQuery } from "@/query";
+
+export const revalidate = 60;
 
 const fetchData = async () => {
   try {
-    const URL = `${process.env.NEXT_PUBLIC_API_URL}/api/home-pages?populate[metadata][populate][metaImage][populate]=true&populate[metadata][populate][metaImage][fields][0]=name&populate[metadata][populate][metaImage][fields][1]=url&populate[sections][populate][image][fields][0]=name&populate[sections][populate][image][fields][1]=url`;
-    const res = await fetch(URL);
+    const res = await fetch(combinedQuery);
     const { data } = await res.json();
     return data?.[0];
   } catch (err) {
@@ -36,20 +38,20 @@ export default async function Home() {
 
   const URL = process.env.NEXT_PUBLIC_API_URL;
 
-  const metaImgUrl = `${URL}${data?.attributes?.metadata?.metaImage?.data?.attributes?.url}`;
+  // const metaImgUrl = `${URL}${data?.attributes?.metadata?.metaImage?.data?.attributes?.url}`;
   const logoImgUrl =
-    `${URL}${data?.attributes?.sections?.[0]?.image?.data?.attributes?.url}` ||
+    `${URL}${data?.attributes?.sections?.[0]?.navbar?.image?.data?.attributes?.url}` ||
     "/LandingPageImages/Navbar/MainLogo.svg";
 
   const getSection = (section: string) => {
     switch (section) {
       case "hero":
-
-        return ( 
-        <>
-        <Header logoUrl={logoImgUrl} />;
-        {/* <Hero heroHeading={'landingPage.heroHeading'} heroText={'landingPage.heroText'} heroVideo={'landingPage.heroVideo'} /> */}
-        </> )
+        return (
+          <>
+            <Header logoUrl={logoImgUrl} />;
+            <Hero heroDetail={data?.attributes?.sections?.[0]} />
+          </>
+        );
       case "menu":
         // return <Menu menuItems={landingPage.menuItems} />
         return <></>;
@@ -75,7 +77,7 @@ export default async function Home() {
   return (
     <main className="bg-[#FCFCFD] w-full h-[120rem] md:h-[250rem] lg:h-[300rem] xl:h-[330rem] 2xl:h-[350rem] 4xl:h-[400rem] mt-0">
       {SECTIONS.map((section, index) => {
-        return <div key={index}>{getSection(section)}</div>;
+        return <>{getSection(section)}</>;
       })}
 
       {/* <Header logoUrl={logoImgUrl} />

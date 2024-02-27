@@ -1,21 +1,13 @@
 import Image from "next/image";
-import React from "react";
-import HeroButtons from "./HeroButtons";
 import HeroContent from "./HeroContent";
+import Button from "../(ui-components)/Button";
 
 type Props = {
-  heroVideo: any;
-  heroText: string;
-  heroHeading: string;
+  heroDetail: any;
 };
 
-function Hero({ heroVideo, heroText, heroHeading }: Props) {
-  console.log("Hero video", heroVideo);
-  const assetRef = heroVideo.asset._ref; // Get the asset reference
-  const assetId = assetRef.split("-")[1]; // Extract the ID from the reference
-
-  // Concatenate the ID with your Sanity project ID and the production URL pattern // Replace with your actual Sanity project ID
-//   const videoUrl = `https://cdn.sanity.io/files/${process.env.NEXT_PUBLIC_SANITY_PROJECT_ID}/production/${assetId}.mp4`;
+function Hero({ heroDetail }: Props) {
+  const videoUrl = `${process.env.NEXT_PUBLIC_API_URL}${heroDetail?.video?.data?.attributes?.url}`;
 
   return (
     <section className="h-[10.3%] w-[83%] mx-auto relative">
@@ -33,14 +25,24 @@ function Hero({ heroVideo, heroText, heroHeading }: Props) {
         className="w-full h-full rounded-[2rem]  shadow-lg object-cover"
       >
         <source
-          src={'https://www.youtube.com/watch?v=RceLeh9D85o'}
+          src={videoUrl}
           type="video/mp4"
           className="w-full h-full rounded-3xl"
         />
         Your browser does not support the video tag.
       </video>
-      <HeroContent heroText={heroText} heroHeading={heroHeading} />
-      <HeroButtons />
+      <HeroContent
+        heroHeading={heroDetail?.title}
+        heroText={heroDetail?.description}
+      />
+      {/* <HeroButtons /> */}
+      <div
+        className="absolute top-[82%] left-[65%] md:left-[70%]  lg:left-[70%] w-[32%] lg:w-[28%] h-[11%] bg-white bg-opacity-[20%] text-start rounded-3xl flex flex-row items-center justify-between px-1 md:px-2"
+        style={{ backdropFilter: "blur(8px)" }}
+      >
+        <Button buttonProps={heroDetail?.leftButton} />
+        <Button buttonProps={heroDetail?.rightButton} />
+      </div>
       {/* Green Arrow */}
       <div className="absolute top-[60%] left-[90%] w-[15%] h-[25%]">
         <Image

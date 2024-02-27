@@ -21,12 +21,14 @@ export interface SectionsHero extends Schema.Component {
     description: '';
   };
   attributes: {
-    title: Attribute.String;
-    description: Attribute.Text;
-    overlayImage: Attribute.Media;
     leftButton: Attribute.Component<'elements.button'>;
-    rightButton: Attribute.Component<'elements.button', true>;
+    rightButton: Attribute.Component<'elements.button'>;
     video: Attribute.Media;
+    navbar: Attribute.Component<'sections.navbar'>;
+    backgroundImage: Attribute.Media;
+    videoOverlayColor: Attribute.String;
+    title: Attribute.RichText;
+    description: Attribute.RichText;
   };
 }
 
