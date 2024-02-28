@@ -61,7 +61,7 @@ function Menu({ menuDetail }: Props) {
             alt="Left line"
           />
         </div>
-        <div className="w-full flex flex-wrap justify-center md:justify-between gap-10">
+        <div className="w-full flex flex-wrap justify-center md:justify-between gap-10 md:gap-0">
 
         {menuDetail?.menuCards.map((menuItem: MenuItem) => (
           <MenuCard menuDetail={menuItem} />
