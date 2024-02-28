@@ -1,0 +1,20 @@
+{
+  "collectionName": "components_sections_menus",
+  "info": {
+    "displayName": "Menu"
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "string"
+    },
+    "backgroundColor": {
+      "type": "string"
+    },
+    "menuCards": {
+      "type": "component",
+      "repeatable": true,
+      "component": "elements.menu-card"
+    }
+  }
+}

@@ -14,6 +14,20 @@ export interface ElementsButton extends Schema.Component {
   };
 }
 
+export interface ElementsMenuCard extends Schema.Component {
+  collectionName: 'components_elements_menu_cards';
+  info: {
+    displayName: 'Menu Card';
+    description: '';
+  };
+  attributes: {
+    image: Attribute.Media;
+    heading: Attribute.String;
+    description: Attribute.String;
+    button: Attribute.Component<'elements.button'>;
+  };
+}
+
 export interface SectionsHero extends Schema.Component {
   collectionName: 'components_sections_heroes';
   info: {
@@ -29,6 +43,18 @@ export interface SectionsHero extends Schema.Component {
     videoOverlayColor: Attribute.String;
     title: Attribute.RichText;
     description: Attribute.RichText;
+  };
+}
+
+export interface SectionsMenu extends Schema.Component {
+  collectionName: 'components_sections_menus';
+  info: {
+    displayName: 'Menu';
+  };
+  attributes: {
+    heading: Attribute.String;
+    backgroundColor: Attribute.String;
+    menuCards: Attribute.Component<'elements.menu-card', true>;
   };
 }
 
@@ -59,7 +85,9 @@ declare module '@strapi/types' {
   export module Shared {
     export interface Components {
       'elements.button': ElementsButton;
+      'elements.menu-card': ElementsMenuCard;
       'sections.hero': SectionsHero;
+      'sections.menu': SectionsMenu;
       'sections.navbar': SectionsNavbar;
       'seo.meta-data': SeoMetaData;
     }

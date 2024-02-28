@@ -26,7 +26,8 @@
     "sections": {
       "type": "dynamiczone",
       "components": [
-        "sections.hero"
+        "sections.hero",
+        "sections.menu"
       ]
     }
   }

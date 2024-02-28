@@ -22,16 +22,6 @@ const fetchData = async () => {
   }
 };
 
-const SECTIONS = [
-  "hero",
-  "menu",
-  "form",
-  "about",
-  "philosophy",
-  "testimonials",
-  "companies",
-  "footer",
-];
 
 export default async function Home() {
   const data = await fetchData();
