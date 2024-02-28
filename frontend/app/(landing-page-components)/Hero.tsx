@@ -12,11 +12,12 @@ function Hero({ heroDetail }: Props) {
 
   const { videoOverlayColor = 'rgb(28,27,33)' } = heroDetail
   const overlayColor = getRgba(videoOverlayColor)
+  const backgroundStyle = `linear-gradient(90deg, ${overlayColor},1) 25%, ${overlayColor},0.93) 45%, ${overlayColor},0.9) 82%)`
 
 
   return (
     <section className="h-[10.3%] w-[90%] lg:w-[83%] mx-auto relative">
-      <div className="w-full h-full absolute rounded-3xl top-0 left-0" style={{ clipPath: 'polygon(0 0, 83% 0, 38% 100%, 0% 100%)', background: `linear-gradient(90deg, ${overlayColor},1) 25%, ${overlayColor},0.93) 45%, ${overlayColor},0.9) 82%)`}}></div>
+      <div className="w-full h-full absolute rounded-3xl top-0 left-0" style={{ clipPath: 'polygon(0 0, 83% 0, 38% 100%, 0% 100%)', background: backgroundStyle}}></div>
       <video
         muted
         loop
@@ -37,7 +38,7 @@ function Hero({ heroDetail }: Props) {
       />
       {/* <HeroButtons /> */}
       <div
-        className="absolute top-[82%] left-[65%] md:left-[70%]  lg:left-[70%] w-[32%] lg:w-[28%] h-[11%] bg-white bg-opacity-[20%] text-start rounded-3xl flex flex-row items-center justify-between px-1 md:px-2"
+        className="absolute top-[82%] left-[65%] md:left-[70%] lg:left-[70%] w-[32%] lg:w-[28%] h-[11%] bg-white bg-opacity-[20%] text-start rounded-3xl flex flex-row items-center justify-between px-1 md:px-2"
         style={{ backdropFilter: "blur(8px)" }}
       >
         <Button buttonProps={heroDetail?.leftButton} />

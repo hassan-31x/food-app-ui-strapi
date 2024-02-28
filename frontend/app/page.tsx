@@ -8,6 +8,7 @@ import Footer from "./(landing-page-components)/Footer";
 import Hero from "./(landing-page-components)/Hero";
 import Review from "./(landing-page-components)/Review";
 import { combinedQuery } from "@/utils/query";
+import Menu from "./(landing-page-components)/Menu";
 
 export const revalidate = 60;
 
@@ -39,9 +40,8 @@ export default async function Home() {
             <Hero heroDetail={section} />
           </>
         );
-      case "menu":
-        // return <Menu menuItems={landingPage.menuItems} />
-        return <></>;
+      case "sections.menu":
+        return <Menu menuDetail={section} />
       case "form":
         return <FormSection />;
       case "about":
