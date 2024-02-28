@@ -7,7 +7,7 @@ import Company from "./(landing-page-components)/Company";
 import Footer from "./(landing-page-components)/Footer";
 import Hero from "./(landing-page-components)/Hero";
 import Review from "./(landing-page-components)/Review";
-import { combinedQuery } from "@/query";
+import { combinedQuery } from "@/utils/query";
 
 export const revalidate = 60;
 

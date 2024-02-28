@@ -1,6 +1,7 @@
 import Image from "next/image";
 import HeroContent from "./HeroContent";
 import Button from "../(ui-components)/Button";
+import { getRgba } from "@/utils/convertColor";
 
 type Props = {
   heroDetail: any;
@@ -10,13 +11,12 @@ function Hero({ heroDetail }: Props) {
   const videoUrl = `${process.env.NEXT_PUBLIC_API_URL}${heroDetail?.video?.data?.attributes?.url}`;
 
   const { videoOverlayColor = 'rgb(28,27,33)' } = heroDetail
-  const [, red, green, blue] = videoOverlayColor.match(/rgb\((\d+),(\d+),(\d+)\)/);
-  const color = `rgba(${red},${green},${blue}`
+  const overlayColor = getRgba(videoOverlayColor)
 
 
   return (
     <section className="h-[10.3%] w-[90%] lg:w-[83%] mx-auto relative">
-      <div className="w-full h-full absolute rounded-3xl top-0 left-0" style={{ clipPath: 'polygon(0 0, 83% 0, 38% 100%, 0% 100%)', background: `linear-gradient(90deg, ${color},1) 25%, ${color},0.93) 45%, ${color},0.9) 82%)`}}></div>
+      <div className="w-full h-full absolute rounded-3xl top-0 left-0" style={{ clipPath: 'polygon(0 0, 83% 0, 38% 100%, 0% 100%)', background: `linear-gradient(90deg, ${overlayColor},1) 25%, ${overlayColor},0.93) 45%, ${overlayColor},0.9) 82%)`}}></div>
       <video
         muted
         loop
