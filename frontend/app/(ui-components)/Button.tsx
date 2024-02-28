@@ -1,11 +1,7 @@
-type Props = {
-  buttonProps: {
+import { type Button } from "@/types/custom-types";
 
-    text: string;
-    variant: "TRANSPARENT" | "FILLED";
-    hasGlow: boolean;
-    color: string;
-  }
+type Props = {
+  buttonProps: Button
 };
 
 const Button = ({ buttonProps }: Props) => {

@@ -10,6 +10,8 @@ import Review from "./(landing-page-components)/Review";
 import { combinedQuery } from "@/utils/query";
 import Menu from "./(landing-page-components)/Menu";
 
+import type { HeroSection, MenuSection, Section } from "@/types/custom-types";
+
 export const revalidate = 60;
 
 const fetchData = async () => {
@@ -31,31 +33,31 @@ export default async function Home() {
 
   // const metaImgUrl = `${URL}${data?.attributes?.metadata?.metaImage?.data?.attributes?.url}`;
   
-  const getSection = (section: any) => {
+  const getSection = (section: Section) => {
     switch (section?.__component) {
       case "sections.hero":
         return (
           <>
-            <Header navDetail={section?.navbar} />
-            <Hero heroDetail={section} />
+            <Header navDetail={(section as HeroSection)?.navbar} />
+            <Hero heroDetail={section as HeroSection} />
           </>
         );
       case "sections.menu":
-        return <Menu menuDetail={section} />
-      case "form":
-        return <FormSection />;
-      case "about":
-        return <></>;
-      // return <VideoSection videoUrl={landingPage.videoUrl} />
-      case "philosophy":
-        return <Philosophy />;
-      case "testimonials":
-        // return <Testimonials testimonials={landingPage.testimonials} />
-        return <></>;
-      case "companies":
-        return <Company />;
-      case "footer":
-        return <Footer />;
+        return <Menu menuDetail={section as MenuSection} />
+      // case "form":
+      //   return <FormSection />;
+      // case "about":
+      //   return <></>;
+      // // return <VideoSection videoUrl={landingPage.videoUrl} />
+      // case "philosophy":
+      //   return <Philosophy />;
+      // case "testimonials":
+      //   // return <Testimonials testimonials={landingPage.testimonials} />
+      //   return <></>;
+      // case "companies":
+      //   return <Company />;
+      // case "footer":
+      //   return <Footer />;
       default:
         return null;
     }

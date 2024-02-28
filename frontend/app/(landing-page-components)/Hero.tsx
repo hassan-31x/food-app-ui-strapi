@@ -2,9 +2,10 @@ import Image from "next/image";
 import HeroContent from "./HeroContent";
 import Button from "../(ui-components)/Button";
 import { getRgba } from "@/utils/convertColor";
+import { type HeroSection } from "@/types/custom-types";
 
 type Props = {
-  heroDetail: any;
+  heroDetail: HeroSection;
 };
 
 function Hero({ heroDetail }: Props) {
@@ -36,7 +37,6 @@ function Hero({ heroDetail }: Props) {
         heroHeading={heroDetail?.title}
         heroText={heroDetail?.description}
       />
-      {/* <HeroButtons /> */}
       <div
         className="absolute top-[82%] left-[65%] md:left-[70%] lg:left-[70%] w-[32%] lg:w-[28%] h-[11%] bg-white bg-opacity-[20%] text-start rounded-3xl flex flex-row items-center justify-between px-1 md:px-2"
         style={{ backdropFilter: "blur(8px)" }}

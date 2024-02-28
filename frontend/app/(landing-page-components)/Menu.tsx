@@ -1,17 +1,11 @@
 import Image from "next/image";
 import React from "react";
 import MenuCard from "./MenuCard";
+import type { MenuSection, MenuItem } from "@/types/custom-types";
 
-type MenuItem = {
-    id: number
-  heading: string,
-  link?: string,
-  image: any,
-  description: string
-}
 
 type Props = {
-    menuDetail : any
+    menuDetail : MenuSection
 };
 
 function Menu({ menuDetail }: Props) {
@@ -69,12 +63,12 @@ function Menu({ menuDetail }: Props) {
         </div>
         {menuDetail?.menuCards.map((menuItem: MenuItem, index: number) => (
           <MenuCard
-            key={menuItem?.id} // Use index as the key (assuming each menu item has a unique index)
+            key={menuItem?.id} 
             name={menuItem.heading}
             image={menuItem.image?.data?.attributes?.url}
             description={menuItem.description}
             link={menuItem.heading}
-            menuNumber={index} // Adding 1 to index to start menuNumber from 1 instead of 0
+            menuNumber={index} 
           />
         ))}
 
