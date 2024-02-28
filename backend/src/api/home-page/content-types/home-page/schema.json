@@ -27,7 +27,8 @@
       "type": "dynamiczone",
       "components": [
         "sections.hero",
-        "sections.menu"
+        "sections.menu",
+        "sections.philosophy"
       ]
     }
   }

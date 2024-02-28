@@ -3,9 +3,8 @@ import React from "react";
 import MenuCard from "./MenuCard";
 import type { MenuSection, MenuItem } from "@/types/custom-types";
 
-
 type Props = {
-    menuDetail : MenuSection
+  menuDetail: MenuSection;
 };
 
 function Menu({ menuDetail }: Props) {
@@ -62,11 +61,10 @@ function Menu({ menuDetail }: Props) {
           />
         </div>
         <div className="w-full flex flex-wrap justify-center md:justify-between gap-10 md:gap-0">
-
-        {menuDetail?.menuCards.map((menuItem: MenuItem) => (
-          <MenuCard menuDetail={menuItem} />
+          {menuDetail?.menuCards.map((menuItem: MenuItem) => (
+            <MenuCard menuDetail={menuItem} key={menuItem.id} />
           ))}
-          </div>
+        </div>
 
         <div className="h-24 lg:h-36 w-[9.5%] relative">
           <Image

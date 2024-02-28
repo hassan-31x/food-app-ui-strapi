@@ -28,10 +28,22 @@ export interface ElementsMenuCard extends Schema.Component {
   };
 }
 
+export interface ElementsPhilosophyCard extends Schema.Component {
+  collectionName: 'components_elements_philosophy_cards';
+  info: {
+    displayName: 'Philosophy Card';
+  };
+  attributes: {
+    heading: Attribute.String;
+    description: Attribute.Text;
+    image: Attribute.Media;
+  };
+}
+
 export interface SectionsHero extends Schema.Component {
   collectionName: 'components_sections_heroes';
   info: {
-    displayName: 'hero';
+    displayName: 'Hero';
     description: '';
   };
   attributes: {
@@ -61,11 +73,24 @@ export interface SectionsMenu extends Schema.Component {
 export interface SectionsNavbar extends Schema.Component {
   collectionName: 'components_sections_navbars';
   info: {
-    displayName: 'navbar';
+    displayName: 'Navbar';
     description: '';
   };
   attributes: {
     image: Attribute.Media;
+  };
+}
+
+export interface SectionsPhilosophy extends Schema.Component {
+  collectionName: 'components_sections_philosophies';
+  info: {
+    displayName: 'Philosophy';
+  };
+  attributes: {
+    heading: Attribute.String;
+    coverImage: Attribute.Media;
+    cards: Attribute.Component<'elements.philosophy-card', true>;
+    button: Attribute.Component<'elements.button'>;
   };
 }
 
@@ -86,9 +111,11 @@ declare module '@strapi/types' {
     export interface Components {
       'elements.button': ElementsButton;
       'elements.menu-card': ElementsMenuCard;
+      'elements.philosophy-card': ElementsPhilosophyCard;
       'sections.hero': SectionsHero;
       'sections.menu': SectionsMenu;
       'sections.navbar': SectionsNavbar;
+      'sections.philosophy': SectionsPhilosophy;
       'seo.meta-data': SeoMetaData;
     }
   }
