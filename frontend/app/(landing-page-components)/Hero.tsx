@@ -9,14 +9,14 @@ type Props = {
 function Hero({ heroDetail }: Props) {
   const videoUrl = `${process.env.NEXT_PUBLIC_API_URL}${heroDetail?.video?.data?.attributes?.url}`;
 
+  const { videoOverlayColor = 'rgb(28,27,33)' } = heroDetail
+  const [, red, green, blue] = videoOverlayColor.match(/rgb\((\d+),(\d+),(\d+)\)/);
+  const color = `rgba(${red},${green},${blue}`
+
+
   return (
-    <section className="h-[10.3%] w-[83%] mx-auto relative">
-      <Image
-        className=" object-cover rounded-3xl"
-        fill
-        src="/LandingPageImages/Hero/BackgroundOverlay.svg"
-        alt="Overlay"
-      />
+    <section className="h-[10.3%] w-[90%] lg:w-[83%] mx-auto relative">
+      <div className="w-full h-full absolute rounded-3xl top-0 left-0" style={{ clipPath: 'polygon(0 0, 83% 1%, 38% 100%, 0% 100%)', background: `linear-gradient(90deg, ${color},1) 25%, ${color},0.93) 45%, ${color},0.9) 82%)`}}></div>
       <video
         muted
         loop
