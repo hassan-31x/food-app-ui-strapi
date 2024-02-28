@@ -10,9 +10,9 @@ type Props = {
 
 function Menu({ menuDetail }: Props) {
   return (
-    <section className="h-[11.5%] w-full">
+    <section className="w-full bg-gray-400">
       {/* Menu Heading */}
-      <div className="h-[8%] w-[70%] md:w-[60%] mx-auto flex flex-row mt-8 md:mt-16 justify-between items-center">
+      <div className="h-10 md:h-16 w-[70%] md:w-[60%] mx-auto flex flex-row mt-8 md:mt-16 justify-between items-center">
         <div className="h-full w-[21%] relative">
           <Image
             className="object-contain "
@@ -23,13 +23,13 @@ function Menu({ menuDetail }: Props) {
         </div>
         <div className="h-full w-[10%] relative">
           <Image
-            className="object-contain "
+            className="object-contain"
             fill
             src="/LandingPageImages/Menu/LeftWing.svg"
             alt="Left line"
           />
         </div>
-        <h1 className="blanch text-xl md:text-3xl lg:text-6xl text-black">
+        <h1 className="blanch text-3xl lg:text-6xl text-black">
           {menuDetail?.heading}
         </h1>
         <div className="h-full w-[10%] relative">
@@ -52,8 +52,8 @@ function Menu({ menuDetail }: Props) {
 
       {/* Menu Cards */}
 
-      <div className="flex flex-row h-[80%] w-[88%] mx-auto justify-center">
-        <div className="h-[26%] w-[9.5%] relative">
+      <div className="flex flex-row w-[88%] mx-auto justify-center">
+        <div className="h-24 lg:h-36 w-[9.5%] relative">
           <Image
             className="object-contain "
             fill
@@ -61,18 +61,14 @@ function Menu({ menuDetail }: Props) {
             alt="Left line"
           />
         </div>
-        {menuDetail?.menuCards.map((menuItem: MenuItem, index: number) => (
-          <MenuCard
-            key={menuItem?.id} 
-            name={menuItem.heading}
-            image={menuItem.image?.data?.attributes?.url}
-            description={menuItem.description}
-            link={menuItem.heading}
-            menuNumber={index} 
-          />
-        ))}
+        <div className="w-full flex flex-wrap justify-center md:justify-between gap-10">
 
-        <div className="h-[26%] w-[9.5%] relative">
+        {menuDetail?.menuCards.map((menuItem: MenuItem) => (
+          <MenuCard menuDetail={menuItem} />
+          ))}
+          </div>
+
+        <div className="h-24 lg:h-36 w-[9.5%] relative">
           <Image
             className="object-contain "
             fill
@@ -82,7 +78,7 @@ function Menu({ menuDetail }: Props) {
         </div>
       </div>
 
-      <div className="h-[2%] mt-[2%] xl:mt-[5%]  w-[50%] relative mx-auto">
+      <div className="h-20 lg:h-24 pt-[2%] xl:pt-[5%] w-[70%] xl:w-[50%] relative mx-auto">
         <Image
           className="object-contain "
           fill
