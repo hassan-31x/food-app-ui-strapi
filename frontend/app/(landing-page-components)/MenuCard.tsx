@@ -18,7 +18,7 @@ function MenuCard({ menuDetail }: MenuCardProps) {
             alt="Left line"
           />
         </div>
-        <div className="w-[290px] h-[350px] lg:h-[400px] mt-[-35%] md:mt-[-40%] bg-white rounded-2xl text-black flex flex-col items-center justify-center px-[5%]">
+        <div className="w-[290px] h-[350px] lg:h-[400px] mt-[-35%] md:mt-[-40%] mx-auto bg-white rounded-2xl text-black flex flex-col items-center justify-center px-[5%]">
           <h3 className="blanch text-4xl mt-[10%] text-center h-[20%] md:h-[15%] flex items-center justify-center"  style={{ lineHeight: "0.8" }}>
             {heading}
           </h3>

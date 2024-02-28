@@ -53,7 +53,7 @@ function HeroContent({ heroHeading, heroText }: Props) {
           alt="Flying eatery"
         />
       </div>
-      <div className="relative h-[6rem] xl:h-[12rem] md:h-[9rem] w-[50%]  left-[25%] z-50 mt-[-1rem] lg:mt-[-2rem]">
+      <div className="relative h-[7rem] lg:h-[9rem] xl:h-[15rem] md:h-[9rem] w-[50%] left-[25%] xl:left-[10%] xl:top-[80px] z-50 mt-[-1rem] lg:mt-[-2rem]">
         <Image
           className="object-contain"
           fill
