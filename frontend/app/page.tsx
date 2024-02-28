@@ -39,17 +39,14 @@ export default async function Home() {
   const URL = process.env.NEXT_PUBLIC_API_URL;
 
   // const metaImgUrl = `${URL}${data?.attributes?.metadata?.metaImage?.data?.attributes?.url}`;
-  const logoImgUrl =
-    `${URL}${data?.attributes?.sections?.[0]?.navbar?.image?.data?.attributes?.url}` ||
-    "/LandingPageImages/Navbar/MainLogo.svg";
-
-  const getSection = (section: string) => {
-    switch (section) {
-      case "hero":
+  
+  const getSection = (section: any) => {
+    switch (section?.__component) {
+      case "sections.hero":
         return (
           <>
-            <Header logoUrl={logoImgUrl} />;
-            <Hero heroDetail={data?.attributes?.sections?.[0]} />
+            <Header navDetail={section?.navbar} />
+            <Hero heroDetail={section} />
           </>
         );
       case "menu":
@@ -76,7 +73,7 @@ export default async function Home() {
 
   return (
     <main className="bg-[#FCFCFD] w-full h-[120rem] md:h-[250rem] lg:h-[300rem] xl:h-[330rem] 2xl:h-[350rem] 4xl:h-[400rem] mt-0">
-      {SECTIONS.map((section, index) => {
+      {data?.attributes?.sections?.map((section: any) => {
         return <>{getSection(section)}</>;
       })}
 
