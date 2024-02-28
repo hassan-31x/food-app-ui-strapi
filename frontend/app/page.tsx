@@ -10,7 +10,7 @@ import Review from "./(landing-page-components)/Review";
 import { combinedQuery } from "@/utils/query";
 import Menu from "./(landing-page-components)/Menu";
 
-import type { HeroSection, MenuSection, Section } from "@/types/custom-types";
+import type { HeroSection, MenuSection, PhilosophySection, Section } from "@/types/custom-types";
 
 export const revalidate = 60;
 
@@ -49,8 +49,8 @@ export default async function Home() {
       // case "about":
       //   return <></>;
       // // return <VideoSection videoUrl={landingPage.videoUrl} />
-      // case "philosophy":
-      //   return <Philosophy />;
+      case "sections.philosophy":
+        return <Philosophy philDetail={section as PhilosophySection} />;
       // case "testimonials":
       //   // return <Testimonials testimonials={landingPage.testimonials} />
       //   return <></>;

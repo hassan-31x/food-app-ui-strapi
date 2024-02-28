@@ -32,10 +32,17 @@ export type MenuItem = {
   button: Button;
 };
 
+export type PhilCard = {
+  id: number;
+  heading: string;
+  description: string;
+  image: Media;
+};
+
 //* Sections
 type SectionCommon = {
   id: number;
-  __component: "sections.hero" | "sections.menu";
+  __component: "sections.hero" | "sections.menu" | "sections.philosophy";
 };
 
 export type NavbarSection = {
@@ -60,7 +67,14 @@ export type MenuSection = SectionCommon & {
   menuCards: MenuItem[];
 };
 
-export type Section = HeroSection | MenuSection;
+export type PhilosophySection = SectionCommon & {
+  heading: string;
+  button: Button;
+  coverImage: Media;
+  cards: PhilCard[]
+}
+
+export type Section = HeroSection | MenuSection | PhilosophySection;
 
 type Testimonial = {
   name: string;

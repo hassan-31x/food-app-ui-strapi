@@ -1,8 +1,13 @@
+import { type PhilosophySection } from "@/types/custom-types";
 import Image from "next/image";
+import Button from "../(ui-components)/Button";
 
-type Props = {};
+type Props = {
+  philDetail: PhilosophySection;
+};
 
-function Philosophy({}: Props) {
+function Philosophy({ philDetail }: Props) {
+  const coverPhoto = philDetail?.coverImage ? `${process.env.NEXT_PUBLIC_API_URL}${philDetail?.coverImage?.data?.attributes?.url}` : '/LandingPageImages/Philosophy/MainImage.svg'
   return (
     <section className="h-[13%] w-full mt-[4%] lg:mt-[6%] ">
       {/* Video Section */}
@@ -24,7 +29,7 @@ function Philosophy({}: Props) {
           />
         </div>
         <h1 className="blanch text-xl md:text-3xl lg:text-6xl text-black">
-          Unsere Philosophoie
+          {philDetail?.heading}
         </h1>
         <div className="h-full w-[8%] relative">
           <Image
@@ -48,86 +53,34 @@ function Philosophy({}: Props) {
         <Image
           className="object-cover rounded-3xl "
           fill
-          src="/LandingPageImages/Philosophy/MainImage.svg"
+          src={coverPhoto}
           alt="Main Image"
         />
       </div>
       {/* Small boxes */}
       <div className="flex flex-row justify-between w-[75%] h-[35%] mx-auto mt-[-5%]">
-        <div className="bg-white rounded-2xl h-full w-[23%] border-2 border-[#DEDEDE] drop-shadow-2xl py-[3%] flex flex-col justify-between">
-          <div className="h-[40%] w-[40%] relative mx-auto">
-            <Image
-              className="object-contain rounded-3xl "
-              fill
-              src="/LandingPageImages/Philosophy/Calendar.svg"
-              alt="Main Image"
-            />
-          </div>
-          <h3 className="lg:text-4xl md:text-2xl text-lg mt-[3%] text-black blanch text-center">
-            Veggy
-          </h3>
-          <p className="lg:text-xs md:text-xxs text-xxss text-black text-center w-[90%] mx-auto mt-[3%]">
-          Lorem ipsum dolor sit amet consectetur. <span className="hidden md:block">Sit eget non metus nunc</span>
-            semper nisl
-          </p>
-        </div>
+        {philDetail?.cards?.map((card) => (
 
-        <div className="bg-white rounded-2xl h-full w-[23%] border-2 border-[#DEDEDE] drop-shadow-2xl py-[3%] flex flex-col justify-between">
+          <div className="bg-white rounded-2xl h-full w-[23%] border-2 border-[#DEDEDE] drop-shadow-2xl py-[3%] flex flex-col justify-between">
           <div className="h-[40%] w-[40%] relative mx-auto">
             <Image
               className="object-contain rounded-3xl "
               fill
-              src="/LandingPageImages/Philosophy/Pencil.svg"
+              src={`${process.env.NEXT_PUBLIC_API_URL}${card?.image?.data?.attributes?.url}`}
               alt="Main Image"
-            />
+              />
           </div>
           <h3 className="lg:text-4xl md:text-2xl text-lg mt-[3%] text-black blanch text-center">
-            Honzeption
+            {card?.heading}
           </h3>
-          <p className="lg:text-xs md:text-xxs text-xxss text-black text-center w-[90%] mx-auto mt-[3%]">
-            Lorem ipsum dolor sit amet consectetur. <span className="hidden md:block">Sit eget non metus nunc</span>
-            semper nisl
+          <p className="lg:text-xs md:text-xxs text-xxss text-black text-center w-[90%] md:w-[70%] mx-auto mt-[3%]">
+          {card?.description}
           </p>
         </div>
-        <div className="bg-white rounded-2xl h-full w-[23%] border-2 border-[#DEDEDE] drop-shadow-2xl py-[3%] flex flex-col justify-between">
-          <div className="h-[40%] w-[40%] relative mx-auto">
-            <Image
-              className="object-contain rounded-3xl "
-              fill
-              src="/LandingPageImages/Philosophy/Bulb.svg"
-              alt="Main Image"
-            />
-          </div>
-          <h3 className="lg:text-4xl md:text-2xl text-lg mt-[3%] text-black blanch text-center">
-            Innovation
-          </h3>
-          <p className="lg:text-xs md:text-xxs text-xxss text-black text-center w-[90%] mx-auto mt-[3%]">
-          Lorem ipsum dolor sit amet consectetur. <span className="hidden md:block">Sit eget non metus nunc</span>
-            semper nisl
-          </p>
-        </div>
-        <div className="bg-white rounded-2xl h-full w-[23%] border-2 border-[#DEDEDE] drop-shadow-2xl py-[3%] flex flex-col justify-between">
-          <div className="h-[40%] w-[40%] relative mx-auto">
-            <Image
-              className="object-contain rounded-3xl "
-              fill
-              src="/LandingPageImages/Philosophy/Heart.svg"
-              alt="Main Image"
-            />
-          </div>
-          <h3 className="lg:text-4xl md:text-2xl text-lg mt-[3%] text-black blanch text-center">
-            Liebe
-          </h3>
-          <p className="lg:text-xs md:text-xxs text-xxss text-black text-center w-[90%] mx-auto mt-[3%]">
-          Lorem ipsum dolor sit amet consectetur. <span className="hidden md:block">Sit eget non metus nunc</span>
-            semper nisl
-          </p>
-        </div>
+              ))}
       </div>
       <div className="mt-[3%] flex flex-row justify-center w-full">
-        <button className="bg-primaryGreen text-white lg:text-sm md:text-xxs text-xxss px-3 py-1 md:px-4 md:py-2 rounded-3xl">
-          SCHREIB UNS DOCH EINFACH MAL
-        </button>
+        <Button buttonProps={philDetail?.button} />
       </div>
       <div className="h-[5%] w-[40%] mt-[3%] mx-auto relative">
         <Image
