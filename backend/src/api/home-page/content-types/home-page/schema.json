@@ -29,7 +29,8 @@
         "sections.hero",
         "sections.menu",
         "sections.philosophy",
-        "sections.companies"
+        "sections.companies",
+        "sections.form"
       ]
     }
   }

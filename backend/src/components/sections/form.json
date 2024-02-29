@@ -1,0 +1,39 @@
+{
+  "collectionName": "components_sections_forms",
+  "info": {
+    "displayName": "Form",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "description": {
+      "type": "text"
+    },
+    "formInputs": {
+      "type": "component",
+      "repeatable": true,
+      "component": "elements.input"
+    },
+    "formTerms": {
+      "type": "text"
+    },
+    "heading": {
+      "type": "richtext"
+    },
+    "address": {
+      "type": "component",
+      "repeatable": false,
+      "component": "elements.address"
+    },
+    "cancelButton": {
+      "type": "component",
+      "repeatable": false,
+      "component": "elements.button"
+    },
+    "submitButton": {
+      "type": "component",
+      "repeatable": false,
+      "component": "elements.button"
+    }
+  }
+}

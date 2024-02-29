@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_elements_inputs",
+  "info": {
+    "displayName": "Input"
+  },
+  "options": {},
+  "attributes": {
+    "label": {
+      "type": "string"
+    },
+    "placeholder": {
+      "type": "string"
+    },
+    "compulsory": {
+      "type": "boolean",
+      "default": true
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "text",
+        "password",
+        "email",
+        "date"
+      ]
+    }
+  }
+}

@@ -1,5 +1,19 @@
 import type { Schema, Attribute } from '@strapi/strapi';
 
+export interface ElementsAddress extends Schema.Component {
+  collectionName: 'components_elements_addresses';
+  info: {
+    displayName: 'Address';
+  };
+  attributes: {
+    heading: Attribute.String;
+    name: Attribute.String;
+    address: Attribute.String;
+    email: Attribute.String;
+    phone: Attribute.String;
+  };
+}
+
 export interface ElementsButton extends Schema.Component {
   collectionName: 'components_elements_buttons';
   info: {
@@ -11,6 +25,19 @@ export interface ElementsButton extends Schema.Component {
     variant: Attribute.Enumeration<['FILLED', 'TRANSPARENT']>;
     hasGlow: Attribute.Boolean & Attribute.DefaultTo<false>;
     color: Attribute.String;
+  };
+}
+
+export interface ElementsInput extends Schema.Component {
+  collectionName: 'components_elements_inputs';
+  info: {
+    displayName: 'Input';
+  };
+  attributes: {
+    label: Attribute.String;
+    placeholder: Attribute.String;
+    compulsory: Attribute.Boolean & Attribute.DefaultTo<true>;
+    type: Attribute.Enumeration<['text', 'password', 'email', 'date']>;
   };
 }
 
@@ -52,6 +79,23 @@ export interface SectionsCompanies extends Schema.Component {
     reviewCount: Attribute.Integer;
     button: Attribute.Component<'elements.button'>;
     starColor: Attribute.String;
+  };
+}
+
+export interface SectionsForm extends Schema.Component {
+  collectionName: 'components_sections_forms';
+  info: {
+    displayName: 'Form';
+    description: '';
+  };
+  attributes: {
+    description: Attribute.Text;
+    formInputs: Attribute.Component<'elements.input', true>;
+    formTerms: Attribute.Text;
+    heading: Attribute.RichText;
+    address: Attribute.Component<'elements.address'>;
+    cancelButton: Attribute.Component<'elements.button'>;
+    submitButton: Attribute.Component<'elements.button'>;
   };
 }
 
@@ -124,10 +168,13 @@ export interface SeoMetaData extends Schema.Component {
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
+      'elements.address': ElementsAddress;
       'elements.button': ElementsButton;
+      'elements.input': ElementsInput;
       'elements.menu-card': ElementsMenuCard;
       'elements.philosophy-card': ElementsPhilosophyCard;
       'sections.companies': SectionsCompanies;
+      'sections.form': SectionsForm;
       'sections.hero': SectionsHero;
       'sections.menu': SectionsMenu;
       'sections.navbar': SectionsNavbar;
