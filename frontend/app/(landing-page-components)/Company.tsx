@@ -9,13 +9,13 @@ type Props = {
 function Company({ companyDetail }: Props) {
   return (
     <div className="h-[7%] w-full mx-auto">
-      <h3 className="blanch text-black text-lg md:text-4xl lg:text-5xl w-[70%] mx-auto text-center mt-[3%] lg:mt-[5%] ">
+      <h3 className="blanch text-black text-xl leading-[20px] md:text-4xl lg:text-6xl w-[70%] lg:leading-[46px] max-w-4xl mx-auto text-center mt-[3%] lg:mt-[5%] ">
         {companyDetail.text}
       </h3>
-      <div className="mt-[3%] flex flex-row justify-between h-[8%] w-[80%] mx-auto">
+      <div className="mt-[3%] flex flex-row justify-between h-[20px] lg:h-[35px] w-full xl:w-[80%] mx-auto">
         {companyDetail?.image?.data?.map((image, index) => (
 
-          <div className="h-full w-[24%] mx-auto relative mt-[3%]">
+          <div className="h-full w-[20%] lg:w-[24%] mx-auto relative mt-[3%]">
           <Image
             className="object-contain "
             fill
