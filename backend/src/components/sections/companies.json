@@ -1,0 +1,32 @@
+{
+  "collectionName": "components_sections_companies",
+  "info": {
+    "displayName": "Companies",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "text": {
+      "type": "text"
+    },
+    "image": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "reviewCount": {
+      "type": "integer"
+    },
+    "button": {
+      "type": "component",
+      "repeatable": false,
+      "component": "elements.button"
+    },
+    "starColor": {
+      "type": "string"
+    }
+  }
+}

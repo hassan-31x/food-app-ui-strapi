@@ -378,7 +378,12 @@ export interface ApiHomePageHomePage extends Schema.CollectionType {
     description: Attribute.Text;
     metadata: Attribute.Component<'seo.meta-data'>;
     sections: Attribute.DynamicZone<
-      ['sections.hero', 'sections.menu', 'sections.philosophy']
+      [
+        'sections.hero',
+        'sections.menu',
+        'sections.philosophy',
+        'sections.companies'
+      ]
     >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;

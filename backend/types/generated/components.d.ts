@@ -40,6 +40,21 @@ export interface ElementsPhilosophyCard extends Schema.Component {
   };
 }
 
+export interface SectionsCompanies extends Schema.Component {
+  collectionName: 'components_sections_companies';
+  info: {
+    displayName: 'Companies';
+    description: '';
+  };
+  attributes: {
+    text: Attribute.Text;
+    image: Attribute.Media;
+    reviewCount: Attribute.Integer;
+    button: Attribute.Component<'elements.button'>;
+    starColor: Attribute.String;
+  };
+}
+
 export interface SectionsHero extends Schema.Component {
   collectionName: 'components_sections_heroes';
   info: {
@@ -112,6 +127,7 @@ declare module '@strapi/types' {
       'elements.button': ElementsButton;
       'elements.menu-card': ElementsMenuCard;
       'elements.philosophy-card': ElementsPhilosophyCard;
+      'sections.companies': SectionsCompanies;
       'sections.hero': SectionsHero;
       'sections.menu': SectionsMenu;
       'sections.navbar': SectionsNavbar;

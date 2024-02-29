@@ -28,7 +28,8 @@
       "components": [
         "sections.hero",
         "sections.menu",
-        "sections.philosophy"
+        "sections.philosophy",
+        "sections.companies"
       ]
     }
   }
