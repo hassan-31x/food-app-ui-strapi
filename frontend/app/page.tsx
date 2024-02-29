@@ -10,7 +10,7 @@ import Review from "./(landing-page-components)/Review";
 import { combinedQuery } from "@/utils/query";
 import Menu from "./(landing-page-components)/Menu";
 
-import type { HeroSection, MenuSection, PhilosophySection, Section } from "@/types/custom-types";
+import type { CompanySection, HeroSection, MenuSection, PhilosophySection, Section } from "@/types/custom-types";
 
 export const revalidate = 60;
 
@@ -54,8 +54,8 @@ export default async function Home() {
       // case "testimonials":
       //   // return <Testimonials testimonials={landingPage.testimonials} />
       //   return <></>;
-      // case "companies":
-      //   return <Company />;
+      case "sections.companies":
+        return <Company companyDetail={section as CompanySection} />;
       // case "footer":
       //   return <Footer />;
       default:

@@ -1,12 +1,14 @@
 //* Components
-type Media = {
-  data: {
+type MediaData = {
     id: number;
     attributes: {
       name: string;
       url: string;
     };
   };
+
+type Media = {
+  data: MediaData
 };
 
 export type Button = {
@@ -42,7 +44,7 @@ export type PhilCard = {
 //* Sections
 type SectionCommon = {
   id: number;
-  __component: "sections.hero" | "sections.menu" | "sections.philosophy";
+  __component: "sections.hero" | "sections.menu" | "sections.philosophy" | "sections.companies";
 };
 
 export type NavbarSection = {
@@ -74,7 +76,17 @@ export type PhilosophySection = SectionCommon & {
   cards: PhilCard[]
 }
 
-export type Section = HeroSection | MenuSection | PhilosophySection;
+export type CompanySection = SectionCommon & {
+  text: string;
+  reviewCount: number;
+  starColor: string;
+  button: Button;
+  image: {
+    data: MediaData[];
+  }
+}
+
+export type Section = HeroSection | MenuSection | PhilosophySection | CompanySection;
 
 type Testimonial = {
   name: string;
