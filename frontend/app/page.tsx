@@ -36,11 +36,13 @@ export default async function Home() {
   const getSection = (section: Section) => {
     switch (section?.__component) {
       case "sections.hero":
+        const heroSection = section as HeroSection; //to remove ts error
+        const backgroundUrl = heroSection?.backgroundImage?.data ? `${URL}${heroSection?.backgroundImage?.data?.attributes?.url}` : '/_illustrations.svg';
         return (
-          <>
-            <Header navDetail={(section as HeroSection)?.navbar} />
-            <Hero heroDetail={section as HeroSection} />
-          </>
+          <div className="w-full" style={{ background: `url(${backgroundUrl}) no-repeat`, backgroundSize: 'contain', backgroundPosition: '50% -23%' }}>
+            <Header navDetail={(heroSection)?.navbar} />
+            <Hero heroDetail={heroSection} />
+          </div>
         );
       case "sections.menu":
         return <Menu menuDetail={section as MenuSection} />
@@ -64,7 +66,7 @@ export default async function Home() {
   };
 
   return (
-    <main className="bg-[#FCFCFD] w-full h-[120rem] md:h-[250rem] lg:h-[300rem] xl:h-[330rem] 2xl:h-[350rem] 4xl:h-[400rem] mt-0">
+    <main className="bg-[#FDFDFD] w-full h-[120rem] md:h-[250rem] lg:h-[300rem] xl:h-[330rem] 2xl:h-[350rem] 4xl:h-[400rem] mt-0">
       {data?.attributes?.sections?.map((section: any) => {
         return <>{getSection(section)}</>;
       })}

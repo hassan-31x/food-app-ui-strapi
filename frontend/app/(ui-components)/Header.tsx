@@ -9,7 +9,7 @@ type Props = {
 function Header({ navDetail }: Props) {
   const logoUrl = navDetail?.image ? `${process.env.NEXT_PUBLIC_API_URL}${navDetail?.image?.data?.attributes?.url}` : '/LandingPageImages/Navbar/MainLogo.svg';
   return (
-    <nav className="flex flex-row justify-between w-[83%] mx-auto mt-5 h-[2.66%] ">
+    <nav className="flex flex-row justify-between w-[83%] mx-auto mt-10 h-[170px]">
       <HeaderSocials />
       <div className="w-[40%] h-full relative">
         <Image src={logoUrl} fill className="object-contain" alt="Main Logo" />

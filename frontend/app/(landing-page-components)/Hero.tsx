@@ -13,12 +13,13 @@ function Hero({ heroDetail }: Props) {
 
   const { videoOverlayColor = 'rgb(28,27,33)' } = heroDetail
   const overlayColor = getRgba(videoOverlayColor)
-  const backgroundStyle = `linear-gradient(90deg, ${overlayColor},1) 25%, ${overlayColor},0.93) 45%, ${overlayColor},0.9) 82%)`
+  const overlayStyle = `linear-gradient(90deg, ${overlayColor},1) 25%, ${overlayColor},0.93) 45%, ${overlayColor},0.9) 82%)`
 
 
   return (
-    <section className="h-[10.3%] w-[90%] lg:w-[83%] mx-auto relative">
-      <div className="w-full h-full absolute rounded-3xl top-0 left-0" style={{ clipPath: 'polygon(0 0, 83% 0, 38% 100%, 0% 100%)', background: backgroundStyle}}></div>
+    <section className="w-full pt-[2.66%] pb-48">
+      <div className="w-[90%] h-[650px] lg:w-[83%] mx-auto relative">
+      <div className="w-full h-full absolute rounded-3xl top-0 left-0" style={{ clipPath: 'polygon(0 0, 83% 0, 38% 100%, 0% 100%)', background: overlayStyle }}></div>
       <video
         muted
         loop
@@ -37,14 +38,12 @@ function Hero({ heroDetail }: Props) {
         heroHeading={heroDetail?.title}
         heroText={heroDetail?.description}
       />
-      <div
-        className="absolute top-[82%] left-[65%] md:left-[70%] lg:left-[70%] w-[32%] lg:w-[28%] h-[11%] bg-white bg-opacity-[20%] text-start rounded-3xl flex flex-row items-center justify-between px-1 md:px-2"
+      <div className="absolute top-[82%] left-[65%] md:left-[70%] lg:left-[70%] w-[32%] lg:w-[28%] h-[11%] bg-white bg-opacity-[20%] text-start rounded-3xl flex flex-row items-center justify-between px-1 md:px-2"
         style={{ backdropFilter: "blur(8px)" }}
       >
         <Button buttonProps={heroDetail?.leftButton} />
         <Button buttonProps={heroDetail?.rightButton} />
       </div>
-      {/* Green Arrow */}
       <div className="absolute top-[60%] left-[90%] w-[15%] h-[25%]">
         <Image
           fill
@@ -58,7 +57,7 @@ function Hero({ heroDetail }: Props) {
           fill
           className="object-fill"
           src="/LandingPageImages/Hero/ArrowDown.svg"
-          alt="Green arrow"
+          alt="Arrow down"
         />
       </div>
 
@@ -74,6 +73,8 @@ function Hero({ heroDetail }: Props) {
         </div>
         <h3 className="font-bold md:text-xs text-xxs">200+ REVIEWS</h3>
       </div>
+      </div>
+      {/* <div className="w-full h-[600px]"></div> */}
     </section>
   );
 }

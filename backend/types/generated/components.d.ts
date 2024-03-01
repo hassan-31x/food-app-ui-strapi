@@ -115,6 +115,7 @@ export interface SectionsHero extends Schema.Component {
     videoOverlayColor: Attribute.String;
     title: Attribute.RichText;
     description: Attribute.RichText;
+    heroBackgroundColor: Attribute.String;
   };
 }
 
