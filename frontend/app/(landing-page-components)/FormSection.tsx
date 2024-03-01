@@ -1,10 +1,13 @@
 import Image from "next/image";
 import Link from "next/link";
 import Form from "./Form";
+import { type FormsSection } from "@/types/custom-types";
 
-type Props = {};
+type Props = {
+  formDetail: FormsSection;
+};
 
-function FormSection({}: Props) {
+function FormSection({ formDetail }: Props) {
   return (
     <section className="h-[17%] w-full mx-auto text-white">
       {/* FormSection Heading */}
@@ -25,7 +28,7 @@ function FormSection({}: Props) {
             alt="Left line"
           />
         </div>
-        <h1 className="blanch text-xl md:text-3xl lg:text-6xl ">BUCHUNG</h1>
+        <h1 className="blanch text-xl md:text-3xl lg:text-6xl ">{formDetail?.sectionHeading}</h1>
         <div className="h-full w-[10%] relative">
           <Image
             className="object-contain "
@@ -55,10 +58,7 @@ function FormSection({}: Props) {
             SIND WIR AUF DEM WEG ZU DIR
           </h1>
           <p className="lg:text-sm md:text-xs text-xxss  mt-2 md:mt-6 w-full text-greyText font-medium">
-            Lorem ipsum dolor sit amet consectetur. Blandit quisque tristique
-            ullamcorper consequat sed aliquet senectus nec. Nisl at commodo amet
-            ullamcorper dignissim risus. Semper dictum urna lacus ultricies duis
-            dui.{" "}
+            {formDetail?.description}{" "}
           </p>
           <div className="w-full h-[15%] relative mt-[4%]">
             <Image
@@ -88,25 +88,27 @@ function FormSection({}: Props) {
               />
             </div>
             <div className="lg:text-sm md:text-xs text-xxss  flex flex-col gap-y-[8%]  ">
-              <h3 className="text-white font-bold">Sebastian Schmidt</h3>
-              <h3 className="text-greyText font-light">Zum Vogelsang</h3>
-              <h3 className="text-greyText font-light">1741516 Grevenbroich</h3>
+              <h3 className="text-white font-bold">{formDetail?.address?.heading}</h3>
+              <h3 className="text-greyText font-light">{formDetail?.address?.name}</h3>
+              <h3 className="text-greyText font-light">{formDetail?.address?.address}</h3>
               <h3 className="text-greyText font-light">
                 Email:{" "}
                 <Link
-                  href="mailto:info@bordsteinschwalbefoodtruck.com"
+                  href={`mailto:${formDetail?.address?.email}`}
                   className="text-white underline"
                 >
-                  info@bordsteinschwalbefoodtruck.com{" "}
+                  {formDetail?.address?.email}{" "}
                 </Link>
               </h3>
               <h3 className="text-greyText font-light">
-                Tel: +49 177 8282 698
+                Tel: {formDetail?.address?.phone}
               </h3>
             </div>
           </div>
         </div>
+
         <Form />
+
       </div>
     </section>
   );

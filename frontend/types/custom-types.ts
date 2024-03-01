@@ -19,6 +19,14 @@ export type Button = {
   color: string;
 };
 
+type Input = {
+  id: number;
+  label: string;
+  placeholder: string;
+  type: 'text' | 'email' | 'password' | 'date';
+  compulsory: boolean;
+}
+
 export type MetaData = {
   id: number;
   metaTitle: string;
@@ -44,7 +52,7 @@ export type PhilCard = {
 //* Sections
 type SectionCommon = {
   id: number;
-  __component: "sections.hero" | "sections.menu" | "sections.philosophy" | "sections.companies";
+  __component: "sections.hero" | "sections.form" | "sections.menu" | "sections.philosophy" | "sections.companies";
 };
 
 export type NavbarSection = {
@@ -62,6 +70,24 @@ export type HeroSection = SectionCommon & {
   rightButton: Button;
   backgroundImage: Media;
 };
+
+export type FormsSection = SectionCommon & {
+  sectionHeading: string;
+  heading: string;
+  description: string;
+  formTerms: string;
+  cancelButton: Button;
+  submitButton: Button;
+  formInputs: Input[];
+  address: {
+    id: number;
+    heading: string;
+    name: string;
+    address: string;
+    email: string;
+    phone: string;
+  }
+}
 
 export type MenuSection = SectionCommon & {
   heading: string;
@@ -86,7 +112,7 @@ export type CompanySection = SectionCommon & {
   }
 }
 
-export type Section = HeroSection | MenuSection | PhilosophySection | CompanySection;
+export type Section = HeroSection | FormsSection | MenuSection | PhilosophySection | CompanySection;
 
 type Testimonial = {
   name: string;
