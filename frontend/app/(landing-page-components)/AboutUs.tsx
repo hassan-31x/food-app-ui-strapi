@@ -17,7 +17,7 @@ function AboutSection({ aboutUsProps }: Props) {
           </svg>
       </div>
 
-      <div className="h-10 md:h-16 w-[70%] md:w-[60%] mx-auto flex flex-row mt-3 md:mt-6 justify-between items-center z-[100]">
+      <div className="h-10 md:h-16 w-[90%] md:w-[60%] mx-auto flex flex-row mt-3 md:mt-6 justify-between items-center z-[100]">
         <div className="h-full w-[21%] relative">
           <Image
             className="object-contain "
@@ -34,7 +34,7 @@ function AboutSection({ aboutUsProps }: Props) {
             alt="Left line"
           />
         </div>
-        <h1 className="blanch text-xl md:text-3xl lg:text-6xl text-black z-[100]">
+        <h1 className="blanch text-4xl md:text-5xl lg:text-6xl text-black z-[100]">
           {aboutUsProps.heading}
         </h1>
         <div className="h-full w-[10%] relative">

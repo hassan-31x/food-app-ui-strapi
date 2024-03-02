@@ -9,7 +9,7 @@ type Props = {
 function Company({ companyDetail }: Props) {
   return (
     <div className="h-[7%] w-full mx-auto">
-      <h3 className="blanch text-black text-xl leading-[20px] md:text-4xl lg:text-6xl w-[70%] lg:leading-[46px] max-w-4xl mx-auto text-center mt-[3%] lg:mt-[5%] ">
+      <h3 className="blanch text-black text-xl leading-[20px] md:text-4xl md:text-5xl lg:text-6xl w-[70%] lg:leading-[46px] max-w-4xl mx-auto text-center mt-[3%] lg:mt-[5%] ">
         {companyDetail.text}
       </h3>
       <div className="mt-[3%] flex flex-row justify-between h-[20px] lg:h-[35px] w-full xl:w-[80%] mx-auto">

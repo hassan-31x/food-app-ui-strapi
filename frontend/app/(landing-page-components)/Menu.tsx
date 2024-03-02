@@ -11,7 +11,7 @@ function Menu({ menuDetail }: Props) {
   return (
     <section className="w-full" style={{ background: menuDetail?.backgroundColor || '#DEDEDE'  }}>
       {/* Menu Heading */}
-      <div className="h-10 md:h-16 w-[70%] md:w-[60%] mx-auto flex flex-row mt-8 md:mt-0 justify-between items-center">
+      <div className="h-10 md:h-16 w-[90%] md:w-[60%] mx-auto flex flex-row mt-8 md:mt-0 justify-between items-center">
         <div className="h-full w-[21%] relative">
           <Image
             className="object-contain "
@@ -28,7 +28,7 @@ function Menu({ menuDetail }: Props) {
             alt="Left line"
           />
         </div>
-        <h1 className="blanch text-3xl lg:text-6xl text-black">
+        <h1 className="blanch text-4xl md:text-5xl lg:text-6xl text-black">
           {menuDetail?.heading}
         </h1>
         <div className="h-full w-[10%] relative">

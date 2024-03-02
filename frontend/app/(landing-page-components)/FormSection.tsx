@@ -33,7 +33,7 @@ function FormSection({ formDetail }: Props) {
         className="h-full w-full pt-5 pb-28"
         style={{ background: formDetail?.backgroundColor || '#232229' }}
       >
-        <div className="h-10 md:h-16 w-[70%] md:w-[60%] mx-auto flex flex-row mt-4 md:mt-12 lg:mt-24 justify-between items-center ">
+        <div className="h-10 md:h-16 w-[90%] md:w-[60%] mx-auto flex flex-row mt-4 md:mt-12 lg:mt-24 justify-between items-center ">
           <div className="h-full w-[21%] relative">
             <Image
               className="object-contain "
@@ -50,7 +50,7 @@ function FormSection({ formDetail }: Props) {
               alt="Left line"
             />
           </div>
-          <h1 className="blanch text-xl md:text-3xl lg:text-7xl ">
+          <h1 className="blanch text-4xl md:text-5xl lg:text-6xl ">
             {formDetail?.sectionHeading}
           </h1>
           <div className="h-full w-[10%] relative">
