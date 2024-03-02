@@ -92,7 +92,7 @@ export type FormsSection = SectionCommon & {
 
 export type MenuSection = SectionCommon & {
   heading: string;
-  backgroundColour: string;
+  backgroundColor: string;
   menuCards: MenuItem[];
 };
 

@@ -18,7 +18,8 @@ const Button = ({ buttonProps, customClass }: Props) => {
 
   if (hasGlow) {
     const rgba = getRgba(color)
-    const boxShadowColor = `0 -24px 48px 0 ${rgba},0.2), 0 24px 48px 0 ${rgba},0.2), 0 -48px 48px 0 ${rgba},0.4), 0 48px 48px 0 ${rgba},0.4)`;
+    // const boxShadowColor = `0 -24px 48px 0 ${rgba},0.2), 0 24px 48px 0 ${rgba},0.2), 0 -48px 48px 0 ${rgba},0.4), 0 48px 48px 0 ${rgba},0.4)`;
+    const boxShadowColor = `0 0 90px 2px ${rgba},1)`;
     return (
       <button
         className={`text-white font-bold lg:text-sm md:text-xxs text-xxss px-3 py-1 md:px-4 md:py-2 lg:py-3 rounded-3xl ${customClass}`}
