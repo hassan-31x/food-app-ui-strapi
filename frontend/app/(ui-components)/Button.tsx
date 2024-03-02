@@ -10,7 +10,7 @@ const Button = ({ buttonProps, customClass }: Props) => {
   const { text, variant, hasGlow = false, color } = buttonProps;
   if (variant === "TRANSPARENT") {
     return (
-      <button className="bg-transparent text-white border-white border-[1px] rounded-3xl lg:text-sm md:text-xxs text-xxss px-3 py-1 md:px-4 md:py-2 lg:py-3 shadow-lg font-bold uppercase">
+      <button className="bg-transparent border-[1px] rounded-3xl lg:text-sm md:text-xxs text-xxss px-3 py-1 md:px-4 md:py-2 lg:py-3 shadow-lg font-bold uppercase z-[100]" style={{ color: buttonProps?.color || '#fff', borderColor: buttonProps?.color || '#fff' }}>
         {text}
       </button>
     );
@@ -22,7 +22,7 @@ const Button = ({ buttonProps, customClass }: Props) => {
     const boxShadowColor = `0 0 90px 2px ${rgba},1)`;
     return (
       <button
-        className={`text-white font-bold lg:text-sm md:text-xxs text-xxss px-3 py-1 md:px-4 md:py-2 lg:py-3 rounded-3xl ${customClass}`}
+        className={`text-white font-bold lg:text-sm md:text-xxs text-xxss px-3 py-1 md:px-4 md:py-2 lg:py-3 rounded-3xl z-[100] ${customClass}`}
         style={{ background: color, boxShadow: boxShadowColor }}
       >
         {text}
@@ -32,7 +32,7 @@ const Button = ({ buttonProps, customClass }: Props) => {
 
   return (
     <button
-      className=" text-white rounded-3xl lg:text-sm md:text-xxs text-xxss px-3 py-1 md:px-4 md:py-2 lg:py-3 drop-shadow-2xl custom-shadow font-bold uppercase"
+      className=" text-white rounded-3xl lg:text-sm md:text-xxs text-xxss px-3 py-1 md:px-4 md:py-2 lg:py-3 drop-shadow-2xl custom-shadow font-bold uppercase z-[100]"
       style={{ background: color }}
     >
       {text}
