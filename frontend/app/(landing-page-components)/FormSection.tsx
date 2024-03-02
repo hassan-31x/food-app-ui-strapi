@@ -14,12 +14,13 @@ function FormSection({ formDetail }: Props) {
   return (
     <section className="h-[17%] w-full text-white flex flex-col gap-0 relative">
     {/* <section className="h-[17%] w-full text-white flex flex-col gap-0 relative top-[-600px]"> */}
-      <div className="custom-shape-divider-bottom-1709375037 w-full absolute -top-[600px]">
+      <div className="custom-shape-divider-bottom-1709375037 w-full absolute top-[-300px] lg:top-[-500px] xl:top-[-600px]">
         <svg
           data-name="Layer 1"
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 1200 120"
           preserveAspectRatio="none"
+          className="h-[300px] lg:h-[500px] xl:h-[600px]"
         >
           <path
             d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
@@ -75,15 +76,15 @@ function FormSection({ formDetail }: Props) {
         <div className="w-[83%] md:w-[75%] h-[85%] mx-auto text-white text-start mt-[3%] flex flex-col items-center lg:flex-row lg:justify-between z-[100]">
           <div className="w-full lg:w-[40%] h-full">
             <h1
-              className="lg:text-8xl md:text-5xl text-[1.5rem] blanch w-full"
+              className="xl:text-8xl text-6xl text-center lg:text-start blanch w-[90%] mx-auto lg:mx-0 lg:w-full"
               style={{ lineHeight: "0.8" }}
             >
               {renderDynamicText(formDetail?.heading, { color: "#8bcda6" })}
             </h1>
-            <p className="lg:text-sm md:text-xs text-xxss  mt-2 md:mt-6 w-full text-greyText font-medium">
+            <p className="lg:text-sm md:text-xs text-xxss mt-2 md:mt-6 w-[90%] mx-auto lg:mx-0 lg:w-full text-greyText font-medium">
               {formDetail?.description}{" "}
             </p>
-            <div className="w-full h-36 relative mt-[4%]">
+            <div className="w-full h-36 relative lg:mt-[4%] lg:mb-0 my-[10%] lg:flex lg:justify-center">
               <Image
                 className="object-contain "
                 fill
@@ -110,7 +111,7 @@ function FormSection({ formDetail }: Props) {
                   alt="Hi"
                 />
               </div>
-              <div className="lg:text-sm md:text-xs text-xxss flex flex-col gap-y-2">
+              <div className="lg:text-sm md:text-xs text-xxss leading-[12px] md:leading-[10px] xl:leading-5 flex flex-col gap-y-2">
                 <h3 className="text-white font-bold h-5">
                   {formDetail?.address?.heading}
                 </h3>
@@ -129,7 +130,7 @@ function FormSection({ formDetail }: Props) {
                     {formDetail?.address?.email}{" "}
                   </Link>
                 </h3>
-                <h3 className="text-greyText font-light">
+                <h3 className="text-greyText font-light h-5">
                   Tel: {formDetail?.address?.phone}
                 </h3>
               </div>
