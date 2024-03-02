@@ -11,8 +11,8 @@ type Props = {
 
 function Form({ formInputs, cancelButton, submitButton, terms }: Props) {
   return (
-    <div className="w-full lg:w-[45%] h-[800px] bg-opacity-5 shadow-xl drop-shadow-2xl custom-shadow-black rounded-3xl border-2 border-[#2e2e2e]">
-      <div className="w-full h-[80%] bg-transparent rounded-t-3xl pt-[5%]  ">
+    <div className="w-full lg:w-[45%] h-[800px] bg-opacity-5 shadow-xl drop-shadow-2xl custom-shadow-black rounded-3xl border-2 border-[#2e2e2e] z-[100]">
+      <div className="w-full h-[80%] rounded-t-3xl pt-[5%]  ">
         {/* Numbers */}
         <div className="flex flex-row justify-between mx-[5%]  h-[20%]">
           <div className="w-[20%] h-full">
@@ -27,7 +27,7 @@ function Form({ formInputs, cancelButton, submitButton, terms }: Props) {
                 alt="Circle"
               />
             </div>
-            <h3 className="text-white font-bold text-center  mt-[7%] md:mt-1 lg:text-sm md:text-xs text-xxss">
+            <h3 className="text-white font-bold text-center mt-[7%] md:mt-1 lg:text-sm md:text-xs text-xxss">
               KONTAKT
             </h3>
           </div>
@@ -102,7 +102,7 @@ function Form({ formInputs, cancelButton, submitButton, terms }: Props) {
         </div>
       </div>
       {/* Bottom Section */}
-      <div className="w-full h-[20%] bg-[#141319] flex flex-col justify-center items-center rounded-b-3xl bg-opacity-95 ">
+      <div className="w-full h-[20%] bg-[#141319] flex flex-col justify-center items-center rounded-b-3xl">
         <h3 className=" text-white lg:text-xs md:text-xxs text-xxss text-center px-[5%]">
           {terms}
         </h3>
