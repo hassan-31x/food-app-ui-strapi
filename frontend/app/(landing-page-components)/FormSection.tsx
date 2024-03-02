@@ -12,8 +12,9 @@ type Props = {
 
 function FormSection({ formDetail }: Props) {
   return (
-    <section className="h-[17%] w-full text-white flex flex-col gap-0 relative top-[-600px]">
-      <div className="custom-shape-divider-bottom-1709375037 w-full">
+    <section className="h-[17%] w-full text-white flex flex-col gap-0 relative">
+    {/* <section className="h-[17%] w-full text-white flex flex-col gap-0 relative top-[-600px]"> */}
+      <div className="custom-shape-divider-bottom-1709375037 w-full absolute -top-[600px]">
         <svg
           data-name="Layer 1"
           xmlns="http://www.w3.org/2000/svg"

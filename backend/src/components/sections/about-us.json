@@ -1,0 +1,29 @@
+{
+  "collectionName": "components_sections_about_uses",
+  "info": {
+    "displayName": "About Us",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "string"
+    },
+    "youtubeVideoLink": {
+      "type": "string"
+    },
+    "leftButton": {
+      "type": "component",
+      "repeatable": false,
+      "component": "elements.button"
+    },
+    "rightButton": {
+      "type": "component",
+      "repeatable": false,
+      "component": "elements.button"
+    },
+    "backgroundColor": {
+      "type": "string"
+    }
+  }
+}

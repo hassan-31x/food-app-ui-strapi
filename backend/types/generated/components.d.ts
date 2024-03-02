@@ -67,6 +67,21 @@ export interface ElementsPhilosophyCard extends Schema.Component {
   };
 }
 
+export interface SectionsAboutUs extends Schema.Component {
+  collectionName: 'components_sections_about_uses';
+  info: {
+    displayName: 'About Us';
+    description: '';
+  };
+  attributes: {
+    heading: Attribute.String;
+    youtubeVideoLink: Attribute.String;
+    leftButton: Attribute.Component<'elements.button'>;
+    rightButton: Attribute.Component<'elements.button'>;
+    backgroundColor: Attribute.String;
+  };
+}
+
 export interface SectionsCompanies extends Schema.Component {
   collectionName: 'components_sections_companies';
   info: {
@@ -176,6 +191,7 @@ declare module '@strapi/types' {
       'elements.input': ElementsInput;
       'elements.menu-card': ElementsMenuCard;
       'elements.philosophy-card': ElementsPhilosophyCard;
+      'sections.about-us': SectionsAboutUs;
       'sections.companies': SectionsCompanies;
       'sections.form': SectionsForm;
       'sections.hero': SectionsHero;

@@ -383,7 +383,8 @@ export interface ApiHomePageHomePage extends Schema.CollectionType {
         'sections.menu',
         'sections.philosophy',
         'sections.companies',
-        'sections.form'
+        'sections.form',
+        'sections.about-us'
       ]
     >;
     createdAt: Attribute.DateTime;

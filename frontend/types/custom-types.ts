@@ -52,7 +52,7 @@ export type PhilCard = {
 //* Sections
 type SectionCommon = {
   id: number;
-  __component: "sections.hero" | "sections.form" | "sections.menu" | "sections.philosophy" | "sections.companies";
+  __component: "sections.hero" | "sections.menu" | "sections.form" | "sections.about-us" | "sections.philosophy" | "sections.companies";
 };
 
 export type NavbarSection = {
@@ -114,7 +114,15 @@ export type CompanySection = SectionCommon & {
   }
 }
 
-export type Section = HeroSection | FormsSection | MenuSection | PhilosophySection | CompanySection;
+export type AboutUsSection = SectionCommon & {
+  heading: string;
+  youtubeVideoLink: string;
+  backgroundColor: string;
+  leftButton: Button;
+  rightButton: Button;
+}
+
+export type Section = HeroSection | MenuSection | FormsSection | AboutUsSection | PhilosophySection | CompanySection;
 
 type Testimonial = {
   name: string;

@@ -30,7 +30,8 @@
         "sections.menu",
         "sections.philosophy",
         "sections.companies",
-        "sections.form"
+        "sections.form",
+        "sections.about-us"
       ]
     }
   }
