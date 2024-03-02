@@ -11,7 +11,7 @@ function Philosophy({ philDetail }: Props) {
   return (
     <section className="h-[13%] w-full mt-[4%] lg:mt-[6%] ">
       {/* Video Section */}
-      <div className="h-[8%] w-[75%] md:w-[67%] mx-auto flex flex-row mt-3 md:mt-6 justify-between items-center">
+      <div className="h-10 md:h-16  w-[75%] md:w-[67%] mx-auto flex flex-row mt-3 md:mt-6 justify-between items-center">
         <div className="h-full w-[18%] relative">
           <Image
             className="object-contain "
@@ -49,7 +49,7 @@ function Philosophy({ philDetail }: Props) {
         </div>
       </div>
       {/* Image */}
-      <div className="w-[83%] h-[40%] relative mt-[5%] mx-auto rounded-3xl">
+      <div className="w-[83%] h-[330px] relative mt-[5%] mx-auto rounded-3xl">
         <Image
           className="object-cover rounded-3xl "
           fill
@@ -62,7 +62,7 @@ function Philosophy({ philDetail }: Props) {
         {philDetail?.cards?.map((card) => (
 
           <div className="bg-white rounded-2xl h-full w-[23%] border-2 border-[#DEDEDE] drop-shadow-2xl py-[3%] flex flex-col justify-between">
-          <div className="h-[40%] w-[40%] relative mx-auto">
+          <div className="h-20 w-[40%] relative mx-auto">
             <Image
               className="object-contain rounded-3xl "
               fill
