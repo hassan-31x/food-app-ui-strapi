@@ -36,13 +36,13 @@ export default async function Home() {
   const getSection = (section: Section) => {
     switch (section?.__component) {
       case "sections.hero":
-        const heroSection = section as HeroSection; //to remove ts error
+        const heroSection = section as HeroSection; //* to remove ts error
         const backgroundUrl = heroSection?.backgroundImage?.data ? `${URL}${heroSection?.backgroundImage?.data?.attributes?.url}` : '/_illustrations.svg';
         return (
           // <div className="w-full relative" style={{ background: `url(${backgroundUrl}) no-repeat`, backgroundSize: 'contain', backgroundPosition: '50% 0%' }}>
           <div className="w-full relative">
             <div className="absolute top-0 left-0 w-full z-10 h-[650px]">
-              <Image src={backgroundUrl} fill alt="bg" className="!relative !top-[-10%] !left-[-2%]"></Image>
+              <Image src={backgroundUrl} fill alt="bg" className="!relative !top-[-8%] !left-[-1%]"></Image>
             </div>
             <Header navDetail={(heroSection)?.navbar} />
             <Hero heroDetail={heroSection} />
@@ -70,8 +70,9 @@ export default async function Home() {
   };
 
   return (
-    <main className="bg-[#FDFDFD] w-full h-[120rem] md:h-[250rem] lg:h-[300rem] xl:h-[330rem] 2xl:h-[350rem] 4xl:h-[400rem] mt-0">
-      {data?.attributes?.sections?.map((section: any) => {
+    <main className="bg-[#FDFDFD] w-full mt-0 flex flex-col gap-0">
+    {/* <main className="bg-[#FDFDFD] w-full mt-0"> */}
+      {data?.attributes?.sections?.map((section: Section) => {
         return <>{getSection(section)}</>;
       })}
 

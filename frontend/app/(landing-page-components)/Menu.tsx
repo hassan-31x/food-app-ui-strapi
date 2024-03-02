@@ -9,7 +9,7 @@ type Props = {
 
 function Menu({ menuDetail }: Props) {
   return (
-    <section className="w-full bg-gray-400">
+    <section className="w-full bg-[#DEDEDE]">
       {/* Menu Heading */}
       <div className="h-10 md:h-16 w-[70%] md:w-[60%] mx-auto flex flex-row mt-8 md:mt-16 justify-between items-center">
         <div className="h-full w-[21%] relative">

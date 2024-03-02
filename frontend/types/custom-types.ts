@@ -64,6 +64,7 @@ export type HeroSection = SectionCommon & {
   title: string;
   description: string;
   videoOverlayColor: string;
+  heroBackgroundColor: string;
   video: Media;
   navbar: NavbarSection;
   leftButton: Button;
