@@ -42,8 +42,8 @@ export default async function Home() {
         return (
           // <div className="w-full relative" style={{ background: `url(${backgroundUrl}) no-repeat`, backgroundSize: 'contain', backgroundPosition: '50% 0%' }}>
           <div className="w-full relative">
-            <div className="absolute top-0 left-0 w-full z-10 h-[650px]">
-              <Image src={backgroundUrl} fill alt="bg" className="!relative !top-[-8%] !left-[-1%]"></Image>
+            <div className="absolute top-0 left-0 w-full z-10 h-[200px] md:h-[450px] lg:h-[650px]">
+              <Image src={backgroundUrl} fill alt="bg" className="!relative !top-[-30%] md:!top-[-20%] lg:!top-[-8%] !left-[-1%]"></Image>
             </div>
             <Header navDetail={(heroSection)?.navbar} />
             <Hero heroDetail={heroSection} />

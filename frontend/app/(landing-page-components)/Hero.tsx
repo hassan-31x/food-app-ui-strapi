@@ -20,13 +20,14 @@ function Hero({ heroDetail }: Props) {
   const overlayStyle = `linear-gradient(90deg, ${overlayColor},1) 25%, ${overlayColor},0.93) 45%, ${overlayColor},0.9) 82%)`;
 
   return (
-    <section className="w-full pt-[2.66%] pb-36 relative bg-[#FDFDFD]">
+    <section className="w-full pt-[2.66%] pb-8 md:pb-16 lg:pb-36 relative bg-[#FDFDFD]">
       <div className="custom-shape-divider-bottom-1709363450 bg-transparent">
         <svg
           data-name="Layer 1"
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 1200 120"
           preserveAspectRatio="none"
+          className="h-[320px] lg:h-[800px]"
         >
           <path
             d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z"
@@ -35,17 +36,17 @@ function Hero({ heroDetail }: Props) {
         </svg>
       </div>
 
-      <div className="w-[90%] h-[650px] lg:w-[83%] mx-auto relative">
+      <div className="w-[90%] h-[250px] md:h-[450px] lg:h-[650px] lg:w-[83%] mx-auto relative">
         <div
           className="w-full h-full absolute rounded-3xl top-0 left-0"
-          style={{ clipPath: "polygon(0 0, 83% 0, 38% 100%, 0% 100%)", background: overlayStyle, }}
+          style={{ clipPath: "polygon(0 0, 75% 0, 38% 100%, 0% 100%)", background: overlayStyle, }}
         ></div>
         <video
           muted
           loop
           controls
           autoPlay
-          className="w-full h-full rounded-[2rem]  shadow-lg object-cover"
+          className="w-full h-full rounded-[2rem] shadow-lg object-cover"
         >
           <source
             src={videoUrl}
@@ -59,13 +60,13 @@ function Hero({ heroDetail }: Props) {
           heroText={heroDetail?.description}
         />
         <div
-          className="absolute top-[82%] left-[65%] md:left-[70%] lg:left-[70%] w-[32%] lg:w-[28%] h-[11%] bg-white bg-opacity-[20%] text-start rounded-3xl flex flex-row items-center justify-between px-1 md:px-2"
+          className="absolute top-[82%] left-[65%] md:left-[70%] lg:left-[77%] gap-4 h-[11%] bg-white bg-opacity-[20%] text-start rounded-3xl flex flex-row items-center justify-between px-1 md:px-2"
           style={{ backdropFilter: "blur(8px)" }}
         >
           <Button buttonProps={heroDetail?.leftButton} />
           <Button buttonProps={heroDetail?.rightButton} />
         </div>
-        <div className="absolute top-[60%] left-[90%] w-[15%] h-[25%]">
+        <div className="absolute top-[58%] left-[90%] w-[15%] h-[25%]">
           <Image
             fill
             className=""
@@ -82,7 +83,7 @@ function Hero({ heroDetail }: Props) {
           />
         </div>
 
-        <div className="justify-end h-max flex w-[83%] mx-auto mt-8 gap-x-3 lg:gap-x-5 items-center md:mr-16">
+        <div className="justify-end h-max flex w-[83%] mx-auto mt-4 md:mt-8 gap-x-3 lg:gap-x-5 items-center mr-2 md:mr-16">
           <h3 className="font-bold md:text-xs text-xxs">GOOGLE & FACEBOOK</h3>
           <div className="md:h-[20px] md:w-[120px] h-[10px] w-[60px] relative">
             <Image

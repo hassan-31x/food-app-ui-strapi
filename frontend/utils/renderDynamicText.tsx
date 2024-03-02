@@ -17,7 +17,7 @@ export const renderDynamicText = (text: string, styles: any) => {
           }
           if (segments[index - 1] === '~~' && segments[index + 1] === '~~' && opening) {
             return (
-              <span key={index} style={styles}>
+              <span key={index} style={styles} className="">
                 {segment}
               </span>
             );
