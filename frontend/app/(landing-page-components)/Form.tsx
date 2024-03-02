@@ -1,6 +1,6 @@
 import Image from "next/image";
 import type { Button, Input } from "@/types/custom-types";
-import Button from "../(ui-components)/Button";
+import ButtonComponent from "../(ui-components)/Button";
 
 type Props = {
   formInputs: Input[];
@@ -11,7 +11,7 @@ type Props = {
 
 function Form({ formInputs, cancelButton, submitButton, terms }: Props) {
   return (
-    <div className="w-[45%] h-[800px] bg-opacity-5 shadow-xl drop-shadow-2xl custom-shadow-black rounded-3xl border-2 border-[#2e2e2e]">
+    <div className="w-full lg:w-[45%] h-[800px] bg-opacity-5 shadow-xl drop-shadow-2xl custom-shadow-black rounded-3xl border-2 border-[#2e2e2e]">
       <div className="w-full h-[80%] bg-transparent rounded-t-3xl pt-[5%]  ">
         {/* Numbers */}
         <div className="flex flex-row justify-between mx-[5%]  h-[20%]">
@@ -107,8 +107,8 @@ function Form({ formInputs, cancelButton, submitButton, terms }: Props) {
           {terms}
         </h3>
         <div className="flex flex-row justify-center gap-x-[5%] mt-[3%]">
-            <Button buttonProps={cancelButton} />
-            <Button buttonProps={submitButton} />
+            <ButtonComponent buttonProps={cancelButton} />
+            <ButtonComponent buttonProps={submitButton} />
         </div>
       </div>
     </div>

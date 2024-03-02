@@ -76,7 +76,7 @@ function Menu({ menuDetail }: Props) {
         </div>
       </div>
 
-      <div className="h-20 lg:h-24 pt-[2%] xl:pt-[5%] w-[50%] xl:w-[30%] relative mx-auto">
+      <div className="h-20 lg:h-24 pt-[2%] xl:pt-[5%] w-[50%] xl:w-[30%] relative mx-auto z-[100]">
         <Image
           className="object-contain "
           fill

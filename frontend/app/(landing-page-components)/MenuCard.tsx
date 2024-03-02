@@ -9,7 +9,7 @@ type MenuCardProps = {
 function MenuCard({ menuDetail }: MenuCardProps) {
   const { id, heading, description, image, button } = menuDetail
   return (
-      <div className="w-[320px] md:mr-4 lg:mr-6 mr-2" key={id}>
+      <div className="w-[320px] md:mr-4 lg:mr-6 mr-2 z-[100]" key={id}>
         <div className="h-56 lg:h-[20rem] relative z-50">
           <Image
             className="object-contain "
