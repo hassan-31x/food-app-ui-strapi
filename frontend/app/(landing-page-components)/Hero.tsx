@@ -3,6 +3,7 @@ import HeroContent from "./HeroContent";
 import Button from "../(ui-components)/Button";
 import { getRgba } from "@/utils/convertColor";
 import { type HeroSection } from "@/types/custom-types";
+import "./curve.css";
 
 type Props = {
   heroDetail: HeroSection;
@@ -11,13 +12,27 @@ type Props = {
 function Hero({ heroDetail }: Props) {
   const videoUrl = `${process.env.NEXT_PUBLIC_API_URL}${heroDetail?.video?.data?.attributes?.url}`;
 
-  const { videoOverlayColor = 'rgb(28,27,33)' } = heroDetail
-  const overlayColor = getRgba(videoOverlayColor)
-  const overlayStyle = `linear-gradient(90deg, ${overlayColor},1) 25%, ${overlayColor},0.93) 45%, ${overlayColor},0.9) 82%)`
-
+  const { videoOverlayColor = "rgb(28,27,33)" } = heroDetail;
+  const overlayColor = getRgba(videoOverlayColor);
+  const overlayStyle = `linear-gradient(90deg, ${overlayColor},1) 25%, ${overlayColor},0.93) 45%, ${overlayColor},0.9) 82%)`;
 
   return (
-    <section className="w-full pt-[2.66%] pb-48">
+    // <section className="w-full pt-[2.66%] pb-48" style={{ background: "url(/heroBlob.svg) no-repeat", backgroundSize: 'contain', backgroundPosition: '50% 0%' }}>
+    <section className="w-full pt-[2.66%] pb-36 relative bg-[#FDFDFD]">
+      <div className="custom-shape-divider-bottom-1709363450 bg-transparent">
+        <svg
+          data-name="Layer 1"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 1200 120"
+          preserveAspectRatio="none"
+        >
+          <path
+            d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z"
+            className="shape-fill"
+          ></path>
+        </svg>
+      </div>
+
       <div className="w-[90%] h-[650px] lg:w-[83%] mx-auto relative">
       <div className="w-full h-full absolute rounded-3xl top-0 left-0" style={{ clipPath: 'polygon(0 0, 83% 0, 38% 100%, 0% 100%)', background: overlayStyle }}></div>
       <video
@@ -74,7 +89,7 @@ function Hero({ heroDetail }: Props) {
         <h3 className="font-bold md:text-xs text-xxs">200+ REVIEWS</h3>
       </div>
       </div>
-      {/* <div className="w-full h-[600px]"></div> */}
+      {/* <div className="h-[600px]"></div> */}
     </section>
   );
 }

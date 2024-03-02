@@ -39,7 +39,11 @@ export default async function Home() {
         const heroSection = section as HeroSection; //to remove ts error
         const backgroundUrl = heroSection?.backgroundImage?.data ? `${URL}${heroSection?.backgroundImage?.data?.attributes?.url}` : '/_illustrations.svg';
         return (
-          <div className="w-full" style={{ background: `url(${backgroundUrl}) no-repeat`, backgroundSize: 'contain', backgroundPosition: '50% -23%' }}>
+          // <div className="w-full relative" style={{ background: `url(${backgroundUrl}) no-repeat`, backgroundSize: 'contain', backgroundPosition: '50% 0%' }}>
+          <div className="w-full relative">
+            <div className="absolute top-0 left-0 w-full z-10 h-[650px]">
+              <Image src={backgroundUrl} fill alt="bg" className="!relative !top-[-10%] !left-[-2%]"></Image>
+            </div>
             <Header navDetail={(heroSection)?.navbar} />
             <Hero heroDetail={heroSection} />
           </div>
