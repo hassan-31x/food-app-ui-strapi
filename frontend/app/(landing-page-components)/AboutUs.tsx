@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { type AboutUsSection } from "@/types/custom-types";
 import Button from "../(ui-components)/Button";
+import '../curve.css'
 
 type Props = {
     aboutUsProps: AboutUsSection;
@@ -8,9 +9,15 @@ type Props = {
 
 function AboutSection({ aboutUsProps }: Props) {
   return (
-    <section className="h-[10%] w-full ">
-      {/* Video Section */}
-      <div className="h-[8%] w-[70%] md:w-[60%] mx-auto flex flex-row mt-3 md:mt-6 justify-between items-center">
+    <section className="w-full relative" style={{ background: aboutUsProps?.backgroundColor || '#8bcda6' }}>
+
+      <div className="custom-shape-divider-bottom-1709382700 absolute top-[-200px]">
+          <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+              <path d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z" fill={aboutUsProps?.backgroundColor || '#8bcda6'}></path>
+          </svg>
+      </div>
+
+      <div className="h-10 md:h-16 w-[70%] md:w-[60%] mx-auto flex flex-row mt-3 md:mt-6 justify-between items-center z-[100]">
         <div className="h-full w-[21%] relative">
           <Image
             className="object-contain "
@@ -27,7 +34,7 @@ function AboutSection({ aboutUsProps }: Props) {
             alt="Left line"
           />
         </div>
-        <h1 className="blanch text-xl md:text-3xl lg:text-6xl text-black">
+        <h1 className="blanch text-xl md:text-3xl lg:text-6xl text-black z-[100]">
           {aboutUsProps.heading}
         </h1>
         <div className="h-full w-[10%] relative">
@@ -47,7 +54,7 @@ function AboutSection({ aboutUsProps }: Props) {
           />
         </div>
       </div>
-      <div className="w-full h-[70%] flex flex-row justify-center relative">
+      <div className="w-full h-[450px] flex flex-row justify-center relative">
         <div className="h-[30%] w-[20%] absolute left-[7%] top-[20%]">
           <Image
             className="object-contain "
@@ -74,14 +81,15 @@ function AboutSection({ aboutUsProps }: Props) {
           />
         </div>
       </div>
-      <div className="flex flex-row justify-center gap-x-[3%] mt-[6%]">
-        <button className="border-black border-[1px] rounded-3xl md:py-2 md:px-6 py-1 px-3 text-black bg-transparent  lg:text-xs md:text-xxs text-xxss font-bold">
-          MEHR ÜBER UNS
-        </button>
+      <div className="flex flex-row justify-center gap-x-[3%] mt-[3%] z-[100]">
         <Button buttonProps={aboutUsProps.leftButton} />
-        <button className="bg-primaryGreen rounded-3xl md:py-2 md:px-6 py-1 px-3 text-white   lg:text-xs md:text-xxs text-xxss font-bold">
-          Showreel Abspielen
-        </button>
+        <Button buttonProps={aboutUsProps?.rightButton} />
+      </div>
+
+      <div className="custom-shape-divider-bottom-1709382700 !bottom-[-8%]" style={{ transform: 'rotateY(180deg)' }}>
+          <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+              <path d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z" fill={'#fff'}></path>
+          </svg>
       </div>
     </section>
   );
