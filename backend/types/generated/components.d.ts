@@ -97,6 +97,7 @@ export interface SectionsForm extends Schema.Component {
     cancelButton: Attribute.Component<'elements.button'>;
     submitButton: Attribute.Component<'elements.button'>;
     sectionHeading: Attribute.String;
+    backgroundColor: Attribute.String;
   };
 }
 

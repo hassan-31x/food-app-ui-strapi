@@ -19,7 +19,7 @@ export type Button = {
   color: string;
 };
 
-type Input = {
+export type Input = {
   id: number;
   label: string;
   placeholder: string;
@@ -76,6 +76,7 @@ export type FormsSection = SectionCommon & {
   sectionHeading: string;
   heading: string;
   description: string;
+  backgroundColor: string;
   formTerms: string;
   cancelButton: Button;
   submitButton: Button;

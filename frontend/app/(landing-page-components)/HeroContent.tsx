@@ -1,5 +1,5 @@
+import { renderDynamicText } from "@/utils/renderDynamicText";
 import Image from "next/image";
-import React from "react";
 
 type Props = {
   heroHeading : string
@@ -7,36 +7,6 @@ type Props = {
 };
 
 function HeroContent({ heroHeading, heroText }: Props) {
-
-  const renderDynamicText = (text: string, styles: any) => {
-    const segments = text.split(/(\~\~)/g);
-    let opening = false;
-
-    return (
-      <>
-        {segments.map((segment: string, index: number) => {
-          if (segment == '~~' && !opening) {
-            opening = true
-            return null
-          }
-          if (segment == '~~' && opening) {
-            opening = false
-            return null
-          }
-          if (segments[index - 1] === '~~' && segments[index + 1] === '~~' && opening) {
-            return (
-              <span key={index} style={styles}>
-                {segment}
-              </span>
-            );
-          }
-
-          return <React.Fragment key={index}>{segment}</React.Fragment>;
-        })}
-      </>
-    );
-  };
-
   return (
     <div className="absolute top-[10%] left-[5%] w-[60%]  text-white text-start">
       <h1 className="xl:text-8xl md:text-6xl blanch text-3xl" style={{ lineHeight: "0.8" }}>

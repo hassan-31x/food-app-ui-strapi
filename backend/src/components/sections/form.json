@@ -37,6 +37,9 @@
     },
     "sectionHeading": {
       "type": "string"
+    },
+    "backgroundColor": {
+      "type": "string"
     }
   }
 }
