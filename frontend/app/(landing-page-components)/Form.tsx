@@ -11,7 +11,7 @@ type Props = {
 
 function Form({ formInputs, cancelButton, submitButton, terms }: Props) {
   return (
-    <div className="w-full lg:w-[45%] h-[800px] bg-opacity-5 shadow-xl drop-shadow-2xl custom-shadow-black rounded-3xl border-2 border-[#2e2e2e] z-[100]">
+    <div className="w-full lg:w-[45%] h-[400px] md:h-[500px] lg:h-[800px] bg-opacity-5 shadow-xl drop-shadow-2xl custom-shadow-black rounded-3xl border-2 border-[#2e2e2e] z-[100]">
       <div className="w-full h-[80%] rounded-t-3xl pt-[5%]  ">
         {/* Numbers */}
         <div className="flex flex-row justify-between mx-[5%]  h-[20%]">
