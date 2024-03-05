@@ -57,9 +57,9 @@ export default async function Home() {
       return <AboutSection aboutUsProps={section as AboutUsSection} />
       case "sections.philosophy":
         return <Philosophy philDetail={section as PhilosophySection} />;
-      // case "testimonials":
-      //   // return <Testimonials testimonials={landingPage.testimonials} />
-      //   return <></>;
+      case "sections.testimonials":
+        // return <Testimonials testimonials={landingPage.testimonials} />
+        return <></>
       case "sections.companies":
         return <Company companyDetail={section as CompanySection} />;
       // case "footer":

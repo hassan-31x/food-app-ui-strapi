@@ -31,7 +31,8 @@
         "sections.philosophy",
         "sections.companies",
         "sections.form",
-        "sections.about-us"
+        "sections.about-us",
+        "sections.testimonial"
       ]
     }
   }

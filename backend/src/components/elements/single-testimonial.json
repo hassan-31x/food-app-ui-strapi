@@ -1,0 +1,29 @@
+{
+  "collectionName": "components_elements_single_testimonials",
+  "info": {
+    "displayName": "Single Testimonial",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "position": {
+      "type": "string"
+    },
+    "stars": {
+      "type": "decimal"
+    },
+    "review": {
+      "type": "text"
+    },
+    "image": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

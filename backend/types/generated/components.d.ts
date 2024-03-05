@@ -67,6 +67,21 @@ export interface ElementsPhilosophyCard extends Schema.Component {
   };
 }
 
+export interface ElementsSingleTestimonial extends Schema.Component {
+  collectionName: 'components_elements_single_testimonials';
+  info: {
+    displayName: 'Single Testimonial';
+    description: '';
+  };
+  attributes: {
+    name: Attribute.String;
+    position: Attribute.String;
+    stars: Attribute.Decimal;
+    review: Attribute.Text;
+    image: Attribute.Media;
+  };
+}
+
 export interface SectionsAboutUs extends Schema.Component {
   collectionName: 'components_sections_about_uses';
   info: {
@@ -171,6 +186,17 @@ export interface SectionsPhilosophy extends Schema.Component {
   };
 }
 
+export interface SectionsTestimonial extends Schema.Component {
+  collectionName: 'components_sections_testimonials';
+  info: {
+    displayName: 'Testimonial';
+  };
+  attributes: {
+    heading: Attribute.String;
+    testimonalCards: Attribute.Component<'elements.single-testimonial', true>;
+  };
+}
+
 export interface SeoMetaData extends Schema.Component {
   collectionName: 'components_seo_meta_data';
   info: {
@@ -191,6 +217,7 @@ declare module '@strapi/types' {
       'elements.input': ElementsInput;
       'elements.menu-card': ElementsMenuCard;
       'elements.philosophy-card': ElementsPhilosophyCard;
+      'elements.single-testimonial': ElementsSingleTestimonial;
       'sections.about-us': SectionsAboutUs;
       'sections.companies': SectionsCompanies;
       'sections.form': SectionsForm;
@@ -198,6 +225,7 @@ declare module '@strapi/types' {
       'sections.menu': SectionsMenu;
       'sections.navbar': SectionsNavbar;
       'sections.philosophy': SectionsPhilosophy;
+      'sections.testimonial': SectionsTestimonial;
       'seo.meta-data': SeoMetaData;
     }
   }

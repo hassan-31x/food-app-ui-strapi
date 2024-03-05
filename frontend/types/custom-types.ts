@@ -49,10 +49,18 @@ export type PhilCard = {
   image: Media;
 };
 
+export type testimonialCard = {
+  id: number;
+  name: string;
+  position: string;
+  description: string;
+  image: Media;
+}
+
 //* Sections
 type SectionCommon = {
   id: number;
-  __component: "sections.hero" | "sections.menu" | "sections.form" | "sections.about-us" | "sections.philosophy" | "sections.companies";
+  __component: "sections.hero" | "sections.menu" | "sections.form" | "sections.about-us" | "sections.philosophy" | "sections.testimonials" | "sections.companies";
 };
 
 export type NavbarSection = {
@@ -104,6 +112,11 @@ export type PhilosophySection = SectionCommon & {
   cards: PhilCard[]
 }
 
+export type TestimonialsSection = SectionCommon & {
+  heading: string;
+  testimonialCards: testimonialCard[]
+}
+
 export type CompanySection = SectionCommon & {
   text: string;
   reviewCount: number;
@@ -122,11 +135,4 @@ export type AboutUsSection = SectionCommon & {
   rightButton: Button;
 }
 
-export type Section = HeroSection | MenuSection | FormsSection | AboutUsSection | PhilosophySection | CompanySection;
-
-type Testimonial = {
-  name: string;
-  text: string;
-  image?: any;
-  jobTitle: string;
-};
+export type Section = HeroSection | MenuSection | FormsSection | AboutUsSection | PhilosophySection | TestimonialsSection | CompanySection;
