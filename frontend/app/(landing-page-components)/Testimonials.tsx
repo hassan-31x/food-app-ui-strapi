@@ -21,6 +21,7 @@ function Testimonials({ testimonials }: Props) {
   }
   const nextSelect = () => {
     if (selectedIndex >= testimonials?.testimonialCards?.length-1) {
+        setSelectedIndex(0)
       return;
     }
 
