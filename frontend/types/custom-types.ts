@@ -53,14 +53,15 @@ export type testimonialCard = {
   id: number;
   name: string;
   position: string;
-  description: string;
+  review: string;
   image: Media;
+  stars: number
 }
 
 //* Sections
 type SectionCommon = {
   id: number;
-  __component: "sections.hero" | "sections.menu" | "sections.form" | "sections.about-us" | "sections.philosophy" | "sections.testimonials" | "sections.companies";
+  __component: "sections.hero" | "sections.menu" | "sections.form" | "sections.about-us" | "sections.philosophy" | "sections.testimonial" | "sections.companies";
 };
 
 export type NavbarSection = {

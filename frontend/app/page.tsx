@@ -10,8 +10,9 @@ import Review from "./(landing-page-components)/Review";
 import { combinedQuery } from "@/utils/query";
 import Menu from "./(landing-page-components)/Menu";
 
-import type { AboutUsSection, CompanySection, FormsSection, HeroSection, MenuSection, PhilosophySection, Section } from "@/types/custom-types";
+import type { AboutUsSection, CompanySection, FormsSection, HeroSection, MenuSection, PhilosophySection, Section, TestimonialsSection } from "@/types/custom-types";
 import AboutSection from "./(landing-page-components)/AboutUs";
+import Testimonials from "./(landing-page-components)/Testimonials";
 
 export const revalidate = 60;
 
@@ -57,9 +58,8 @@ export default async function Home() {
       return <AboutSection aboutUsProps={section as AboutUsSection} />
       case "sections.philosophy":
         return <Philosophy philDetail={section as PhilosophySection} />;
-      case "sections.testimonials":
-        // return <Testimonials testimonials={landingPage.testimonials} />
-        return <></>
+      case "sections.testimonial":
+        return <Testimonials testimonials={section as TestimonialsSection} />
       case "sections.companies":
         return <Company companyDetail={section as CompanySection} />;
       // case "footer":

@@ -1,14 +1,15 @@
 {
   "collectionName": "components_sections_testimonials",
   "info": {
-    "displayName": "Testimonial"
+    "displayName": "Testimonial",
+    "description": ""
   },
   "options": {},
   "attributes": {
     "heading": {
       "type": "string"
     },
-    "testimonalCards": {
+    "testimonialCards": {
       "type": "component",
       "repeatable": true,
       "component": "elements.single-testimonial"

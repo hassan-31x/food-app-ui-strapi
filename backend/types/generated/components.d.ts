@@ -76,7 +76,7 @@ export interface ElementsSingleTestimonial extends Schema.Component {
   attributes: {
     name: Attribute.String;
     position: Attribute.String;
-    stars: Attribute.Decimal;
+    stars: Attribute.Integer;
     review: Attribute.Text;
     image: Attribute.Media;
   };
@@ -190,10 +190,11 @@ export interface SectionsTestimonial extends Schema.Component {
   collectionName: 'components_sections_testimonials';
   info: {
     displayName: 'Testimonial';
+    description: '';
   };
   attributes: {
     heading: Attribute.String;
-    testimonalCards: Attribute.Component<'elements.single-testimonial', true>;
+    testimonialCards: Attribute.Component<'elements.single-testimonial', true>;
   };
 }
 
