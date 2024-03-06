@@ -1,18 +1,18 @@
 import Image from "next/image";
+
 import Header from "./(ui-components)/Header";
-import Print from "./print";
+import Testimonials from "./(landing-page-components)/Testimonials";
 import FormSection from "./(landing-page-components)/FormSection";
 import Philosophy from "./(landing-page-components)/Philosophy";
+import AboutSection from "./(landing-page-components)/AboutUs";
 import Company from "./(landing-page-components)/Company";
 import Footer from "./(landing-page-components)/Footer";
 import Hero from "./(landing-page-components)/Hero";
-import Review from "./(landing-page-components)/Review";
-import { combinedQuery } from "@/utils/query";
 import Menu from "./(landing-page-components)/Menu";
 
+import { combinedQuery } from "@/utils/query";
+
 import type { AboutUsSection, CompanySection, FormsSection, HeroSection, MenuSection, PhilosophySection, Section, TestimonialsSection } from "@/types/custom-types";
-import AboutSection from "./(landing-page-components)/AboutUs";
-import Testimonials from "./(landing-page-components)/Testimonials";
 
 export const revalidate = 60;
 
@@ -41,7 +41,6 @@ export default async function Home() {
         const heroSection = section as HeroSection; //* to remove ts error
         const backgroundUrl = heroSection?.backgroundImage?.data ? `${URL}${heroSection?.backgroundImage?.data?.attributes?.url}` : '/_illustrations.svg';
         return (
-          // <div className="w-full relative" style={{ background: `url(${backgroundUrl}) no-repeat`, backgroundSize: 'contain', backgroundPosition: '50% 0%' }}>
           <div className="w-full relative">
             <div className="absolute top-0 left-0 w-full z-10 h-[200px] md:h-[450px] lg:h-[650px]">
               <Image src={backgroundUrl} fill alt="bg" className="!relative !top-[-30%] md:!top-[-20%] lg:!top-[-8%] !left-[-1%]"></Image>
@@ -62,8 +61,6 @@ export default async function Home() {
         return <Testimonials testimonials={section as TestimonialsSection} />
       case "sections.companies":
         return <Company companyDetail={section as CompanySection} />;
-      // case "footer":
-      //   return <Footer />;
       default:
         return null;
     }
@@ -71,41 +68,10 @@ export default async function Home() {
 
   return (
     <main className="bg-[#FDFDFD] w-full mt-0 flex flex-col gap-0">
-    {/* <main className="bg-[#FDFDFD] w-full mt-0"> */}
       {data?.attributes?.sections?.map((section: Section) => {
         return <>{getSection(section)}</>;
       })}
-
-      {/* <Header logoUrl={logoImgUrl} />
-
-      <Hero heroHeading={'landingPage.heroHeading'} heroText={'landingPage.heroText'} heroVideo={'landingPage.heroVideo'} />
-
-      <Review /> */}
-
-      {/* <Menu menuItems={landingPage.menuItems} /> */}
-
-      {/* <FormSection /> */}
-
-      {/* <VideoSection videoUrl={landingPage.videoUrl} /> */}
-
-      {/* <Philosophy /> */}
-
-      {/* <Testimonials testimonials={landingPage.testimonials}/> */}
-
-      {/* <div className="h-[2%] w-[25%] mx-auto relative mt-[1%]">
-        <Image
-          className="object-contain "
-          fill
-          src="/LandingPageImages/Testimonials/Line.svg"
-          alt="Underline"
-        />
-      </div>
-
-      <Company />
-
-      <Footer /> */}
-
-      <Print data={data.attributes} />
+      <Footer />
     </main>
   );
 }
