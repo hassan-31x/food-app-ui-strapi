@@ -46,3 +46,20 @@
     width: calc(145% + 1.3px);
     height: 280px;
 }
+
+/* footer */
+.custom-shape-divider-bottom-1709749424 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+}
+
+.custom-shape-divider-bottom-1709749424 svg {
+    position: relative;
+    display: block;
+    width: calc(256% + 1.3px);
+    height: 550px;
+}

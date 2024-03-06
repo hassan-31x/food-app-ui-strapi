@@ -11,7 +11,7 @@ function Header({ navDetail }: Props) {
   return (
     <nav className="flex flex-row justify-between w-[83%] mx-auto mt-0 md:mt-5 lg:mt-10 h-[100px] md:h-[170px]">
       <HeaderSocials />
-      <div className="w-[40%] h-full relative">
+      <div className="w-[40%] lg:w-[25%] h-full relative">
         <Image src={logoUrl} fill className="object-contain" alt="Main Logo" />
       </div>
       <HeaderMenu />
