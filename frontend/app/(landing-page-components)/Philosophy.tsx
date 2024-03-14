@@ -58,7 +58,7 @@ function Philosophy({ philDetail }: Props) {
         />
       </div>
       {/* Small boxes */}
-      <div className="flex flex-row justify-between w-[75%] h-[35%] mx-auto mt-[-5%]">
+      <div className="flex flex-row justify-between w-[85%] md:w-[75%] h-[35%] mx-auto mt-[-5%]">
         {philDetail?.cards?.map((card) => (
 
           <div className="bg-white rounded-2xl h-full w-[23%] border-2 border-[#DEDEDE] drop-shadow-2xl py-[3%] flex flex-col justify-between">
@@ -73,7 +73,7 @@ function Philosophy({ philDetail }: Props) {
           <h3 className="lg:text-4xl md:text-2xl text-lg mt-[3%] text-black blanch text-center">
             {card?.heading}
           </h3>
-          <p className="lg:text-xs md:text-xxs text-xxss text-black text-center w-[90%] md:w-[70%] mx-auto mt-[3%]">
+          <p className="lg:text-xs text-xxs leading-[10px] lg:leading-[16px] text-black text-center w-[90%] md:w-[70%] mx-auto mt-[3%]">
           {card?.description}
           </p>
         </div>
