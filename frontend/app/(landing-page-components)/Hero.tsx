@@ -60,7 +60,7 @@ function Hero({ heroDetail }: Props) {
           heroText={heroDetail?.description}
         />
         <div
-          className="absolute top-[82%] left-[65%] md:left-[70%] lg:left-[77%] gap-4 h-[11%] bg-white bg-opacity-[20%] text-start rounded-3xl flex flex-row items-center justify-between px-1 md:px-2"
+          className="absolute top-[82%] left-[65%] md:left-[70%] lg:left-[77%] gap-4 h-[15%] md:h-[11%] bg-white bg-opacity-[20%] text-start rounded-3xl flex flex-row items-center justify-between px-1 md:px-2"
           style={{ backdropFilter: "blur(8px)" }}
         >
           <Button buttonProps={heroDetail?.leftButton} />

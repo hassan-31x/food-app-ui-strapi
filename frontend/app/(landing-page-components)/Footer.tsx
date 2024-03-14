@@ -50,7 +50,7 @@ function Footer({}: Props) {
           {Array.from({ length: 4 }).map((_, index) => (
             <Button
               buttonProps={{ ...buttonProps, id: index }}
-              customClass="text-[#8BCDA6]"
+              customClass="!text-[#8BCDA6]"
             />
           ))}
         </div>
