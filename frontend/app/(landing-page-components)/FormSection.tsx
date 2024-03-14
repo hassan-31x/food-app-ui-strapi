@@ -81,7 +81,7 @@ function FormSection({ formDetail }: Props) {
             >
               {renderDynamicText(formDetail?.heading, { color: "#8bcda6" })}
             </h1>
-            <p className="lg:text-sm md:text-xs text-xxss mt-2 md:mt-6 w-[90%] mx-auto lg:mx-0 lg:w-full text-greyText font-medium">
+            <p className="lg:text-sm text-xs text-center lg:text-left  mt-2 md:mt-6 w-[90%] mx-auto lg:mx-0 lg:w-full text-greyText font-medium">
               {formDetail?.description}{" "}
             </p>
             <div className="w-full h-36 relative lg:mt-[4%] lg:mb-0 my-[10%] lg:flex lg:justify-center">
@@ -111,7 +111,7 @@ function FormSection({ formDetail }: Props) {
                   alt="Hi"
                 />
               </div>
-              <div className="lg:text-sm md:text-xs text-xxss leading-[12px] md:leading-[10px] xl:leading-5 flex flex-col gap-y-2">
+              <div className="lg:text-sm text-xs leading-[12px] md:leading-[10px] xl:leading-5 flex flex-col gap-y-2">
                 <h3 className="text-white font-bold h-5">
                   {formDetail?.address?.heading}
                 </h3>
