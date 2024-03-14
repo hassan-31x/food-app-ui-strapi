@@ -28,7 +28,7 @@ function Philosophy({ philDetail }: Props) {
             alt="Left line"
           />
         </div>
-        <h1 className="blanch text-4xl md:text-5xl lg:text-6xl text-black">
+        <h1 className="blanch text-4xl md:text-5xl lg:text-6xl text-black text-center">
           {philDetail?.heading}
         </h1>
         <div className="h-full w-[8%] relative">

@@ -35,7 +35,7 @@ function MenuCard({ menuDetail }: MenuCardProps) {
               alt="Left line"
             />
           </div>
-          <Button buttonProps={button} customClass="mt-[10%] drop-shadow-2xl" />
+          <Button buttonProps={button} customClass="mt-[10%] drop-shadow-2xl md:!text-xs" />
         </div>
       </div>
   );

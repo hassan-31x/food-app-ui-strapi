@@ -12,7 +12,7 @@ function HeroContent({ heroHeading, heroText }: Props) {
       <h1 className="xl:text-9xl md:text-6xl lg:text-7xl blanch text-4xl" style={{ lineHeight: "0.8" }}>
         {renderDynamicText(heroHeading, { color: '#8bcda6'})}
       </h1>
-      <p className="xl:text-sm md:text-xs text-xxs leading-[12px] md:leading-[10px] xl:leading-5 mt-2 md:mt-6 w-[60%] text-[#999999]">
+      <p className="lg:text-sm md:text-xs text-xxs leading-[12px] md:leading-[15px] lg:leading-5 mt-2 md:mt-6 w-[60%] text-[#999999]">
         {renderDynamicText(heroText, { color: '#ffffff' })}
       </p>
       <div className="relative h-[3rem] xl:h-[8rem] md:h-[5rem] w-[40%] mt-4">

@@ -10,7 +10,7 @@ const Button = ({ buttonProps, customClass }: Props) => {
   const { text, variant, hasGlow = false, color } = buttonProps;
   if (variant === "TRANSPARENT") {
     return (
-      <button className={`bg-transparent border-[1px] rounded-3xl lg:text-sm text-xxs px-3 md:px-4 py-3 shadow-lg md:font-bold uppercase z-[100] ${customClass}`} style={{ color: buttonProps?.color || '#fff', borderColor: buttonProps?.color || '#fff' }}>
+      <button className={`bg-transparent border-[1px] rounded-3xl lg:text-[12px] xl:text-sm md:text-[10px] text-xxs px-3 md:px-4 py-3 shadow-lg md:font-bold uppercase z-[100] ${customClass}`} style={{ color: buttonProps?.color || '#fff', borderColor: buttonProps?.color || '#fff' }}>
         {text}
       </button>
     );
@@ -22,7 +22,7 @@ const Button = ({ buttonProps, customClass }: Props) => {
     const boxShadowColor = `0 0 90px 2px ${rgba},1)`;
     return (
       <button
-        className={`text-white md:font-bold lg:text-sm text-xxs px-3 md:px-4 py-3 rounded-3xl z-[100] ${customClass}`}
+        className={`text-white md:font-bold lg:text-[12px] xl:text-sm md:text-[10px] text-xxs px-3 md:px-4 py-3 rounded-3xl z-[100] ${customClass}`}
         style={{ background: color, boxShadow: boxShadowColor }}
       >
         {text}
@@ -32,7 +32,7 @@ const Button = ({ buttonProps, customClass }: Props) => {
 
   return (
     <button
-      className={`text-white rounded-3xl lg:text-sm text-xxs px-3 md:px-4 py-3 drop-shadow-2xl custom-shadow md:font-bold uppercase z-[100] ${customClass}`}
+      className={`text-white rounded-3xl lg:text-[12px] xl:text-sm md:text-[10px] text-xxs px-3 md:px-4 py-3 drop-shadow-2xl custom-shadow md:font-bold uppercase z-[100] ${customClass}`}
       style={{ background: color }}
     >
       {text}
