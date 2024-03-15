@@ -22,13 +22,13 @@ function TestimonialBox({ testimonial }: Testimonial) {
           alt="Colon"
         />
       </div>
-      <h3 className="mt-[5%] lg:text-base md:text-sm text-[#1b1b1b] text-xxss text-center font-light w-[80%] mx-auto">
+      <h3 className="mt-[5%] lg:text-base md:text-sm text-[#1b1b1b] text-[12px] leading-[12px] md:leading-[20px] text-center font-light w-[80%] mx-auto">
        {review}
       </h3>
-      <h3 className="mt-[3%] lg:text-lg md:text-base text-xxs text-[#1b1b1b] text-center font-bold w-[60%] mx-auto">
+      <h3 className="mt-[3%] lg:text-lg md:text-base text-sm text-[#1b1b1b] text-center font-bold w-[60%] mx-auto">
        {name}
       </h3>
-      <h3 className=" lg:text-sm md:text-xs text-xxs text-[#1b1b1b] text-center font-light w-[60%] mx-auto">
+      <h3 className=" lg:text-sm text-xs text-[#1b1b1b] text-center font-light w-[60%] mx-auto">
        {position}
       </h3>
 

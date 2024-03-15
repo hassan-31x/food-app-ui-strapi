@@ -8,7 +8,7 @@ type Props = {
 
 function Company({ companyDetail }: Props) {
   return (
-    <div className="h-[7%] w-full mx-auto">
+    <div className="h-[7%] w-full mx-auto mt-10 lg:mt-0">
       <h3 className="blanch text-black text-xl leading-[20px] md:text-4xl lg:text-6xl w-[70%] lg:leading-[46px] max-w-4xl mx-auto text-center mt-[3%] lg:mt-[5%] ">
         {companyDetail.text}
       </h3>
