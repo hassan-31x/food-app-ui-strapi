@@ -55,7 +55,7 @@ function Footer({}: Props) {
           ))}
         </div>
         <div className="w-[10%] h-10 md:h-16 lg:h-20 flex flex-row justify-between">
-          <div className="w-[26%] h-full relative">
+          <div className="w-[26%] max-w-[40px] h-full relative">
             <Image
               src="/LandingPageImages/Footer/Facebook.svg"
               fill
@@ -63,7 +63,7 @@ function Footer({}: Props) {
               alt="Facebook"
             />
           </div>
-          <div className="w-[26%] h-full relative">
+          <div className="w-[26%] max-w-[40px] h-full relative">
             <Image
               src="/LandingPageImages/Footer/Twitter.svg"
               fill
@@ -71,7 +71,7 @@ function Footer({}: Props) {
               alt="Twitter"
             />
           </div>
-          <div className="w-[26%] h-full relative">
+          <div className="w-[26%] max-w-[40px] h-full relative">
             <Image
               src="/LandingPageImages/Footer/Instagram.svg"
               fill
